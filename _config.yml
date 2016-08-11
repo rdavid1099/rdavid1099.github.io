@@ -3,8 +3,8 @@ email: "rdavid1099@gmail.com"
 description: > # this means to ignore newlines until "baseurl:"
   A student's perspective of the life, joys and challenges offered by the
   Turing School of Software and Design.
-baseurl: ""
-url: ""
+baseurl: "https://rdavid1099.github.io/"
+url: "https://rdavid1099.github.io/"
 twitter_username: "ProducerWorkman"
 github_username:  "rdavid1099"
 
