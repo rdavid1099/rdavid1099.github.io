@@ -1,0 +1,42 @@
+.navbar-default {
+  color: #565658;
+  background-color: #C6C6D0;
+}
+
+#ryan-workman {
+  font-family: monospace;
+}
+
+#ryan-workman .ryan {
+  position: absolute;
+  font-size: 2vw;
+  top: -0.4vw;
+  right: 49vw;
+}
+
+#ryan-workman .workman {
+  position: absolute;
+  font-size: 2.5vw;
+  top: -0.8vw;
+  right: 38.5vw;
+}
+
+#rw-logo {
+  position: relative;
+  font-family: monospace;
+  font-size: 3vw;
+  color: #565658;
+}
+
+#rw-logo .r {
+  position: absolute;
+  right: -2vw;
+  top: 0.3vw;
+}
+
+#rw-logo .w {
+  position: absolute;
+  font-size: 3.5vw;
+  right: -3.6vw;
+  top: -0.1vw;
+}
