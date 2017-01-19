@@ -2,6 +2,12 @@
   color: #565658;
 }
 
+.img-projects {
+  height: 2vw;
+  width: auto;
+  padding: 0px 3px 6px 0;
+}
+
 .about-txt {
   font-size: 2vw;
   font-weight: 300;
