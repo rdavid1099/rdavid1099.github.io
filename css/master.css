@@ -2,6 +2,16 @@
   color: #565658;
 }
 
+.about-txt {
+  font-size: 2vw;
+  font-weight: 300;
+}
+
+#img-about {
+  height: 15vw;
+  width: auto;
+}
+
 #ryan-workman {
   font-family: monospace;
 }
