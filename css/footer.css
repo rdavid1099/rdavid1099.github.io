@@ -4,13 +4,13 @@
   margin: 0;
 }
 
-#footer a, p {
+#footer a, #footer p {
   font-size: 0.8em;
+  color: #B3E4FB;
 }
 
 #footer a {
   text-decoration: none;
-  color: #B3E4FB;
 }
 
 #footer .col-xs-4 {
