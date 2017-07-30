@@ -8,6 +8,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/master.css">
     <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/footer.css">
   </head>
   <body>
     <div id="navigation">
@@ -34,16 +35,16 @@
       </center>
       <div class="row" id='nav-links'>
         <div class="col-xs-3">
-          <p class='nav-link active'>about me</p>
+          <p class='nav-link active' onclick="app.navigate(event)">about</p>
         </div>
         <div class="col-xs-3">
-          <p class='nav-link'>projects</p>
+          <p class='nav-link' onclick="app.navigate(event)">projects</p>
         </div>
         <div class="col-xs-3">
-          <p class='nav-link'>resume</p>
+          <p class='nav-link' onclick="app.navigate(event)">resume</p>
         </div>
         <div class="col-xs-3">
-          <p class='nav-link'>contact</p>
+          <p class='nav-link' onclick="app.navigate(event)">contact</p>
         </div>
       </div>
     </div>
@@ -51,6 +52,33 @@
     <div class="container" id='contents'>
       <h1>stuff</h1>
     </div>
+
+    <div id="footer" class="row">
+      <div class="col-xs-4 info">
+        <p>Ryan David Workman</p>
+        <p>Denver, Colorado</p>
+      </div>
+      <div class="col-xs-4">
+        <center>
+          <table>
+            <tr>
+              <td>
+                <p onclick="app.navigate(event)" class="link">about</p>
+                <p onclick="app.navigate(event)" class="link">projects</p>
+              </td>
+              <td>
+                <p onclick="app.navigate(event)" class="link">resume</p>
+                <p onclick="app.navigate(event)" class="link">contact</p>
+              </td>
+            </tr>
+          </table>
+        </center>
+      </div>
+      <div class="col-xs-4">
+        <a href="mailto:rdavid1099@gmail.com" class="link">rdavid1099@gmail.com</a>
+      </div>
+    </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/app.js"></script>

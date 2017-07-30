@@ -1,0 +1,30 @@
+#footer {
+  background-color: #0288D0;
+  width: 100%;
+  margin: 0;
+}
+
+#footer a, p {
+  font-size: 0.8em;
+}
+
+#footer a {
+  text-decoration: none;
+  color: #B3E4FB;
+}
+
+#footer .col-xs-4 {
+  text-align: center;
+}
+
+#footer .col-xs-4.info p {
+  margin: 7px 0 -5px 0;
+}
+
+#footer td {
+  padding: 0 2vw 0 2vw;
+}
+
+#footer .link:hover {
+  cursor: pointer;
+}

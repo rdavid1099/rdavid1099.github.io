@@ -19,8 +19,8 @@
 }
 
 #navigation .circle-matte {
-  width: 11vw;
-  height: 11vw;
+  width: 14vw;
+  height: 14vw;
   position: relative;
   overflow: hidden;
   border-radius: 50%;
@@ -35,10 +35,6 @@
 
 #navigation .resource-links {
   width: 29vw;
-}
-
-#navigation .resource-links.row .col-xs-3 {
-
 }
 
 #navigation .resource-links.row img {
