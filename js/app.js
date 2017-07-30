@@ -21,10 +21,23 @@ var htmlGrabber = {
   'contact': '<h1>CONTACT</h1>'
 };
 
-var setActiveButton = function(target) {
-  $navLinks = document.getElementById('nav-links');
-  clearAllActive($navLinks.children);
-  target.classList.add('active');
+var getTargetLink = function($navLinks, innerText, cb) {
+  var target;
+  for (var i = 0; i < $navLinks.children.length; i++) {
+    if ($navLinks.children[i].firstElementChild.innerText === innerText) {
+      target = $navLinks.children[i];
+      break;
+    }
+  }
+  cb();
+  return target.firstElementChild;
+};
+
+var setActiveButton = function(targetText) {
+  var $navLinks = document.getElementById('nav-links');
+  getTargetLink($navLinks, targetText, function() {
+    clearAllActive($navLinks.children);
+  }).classList.add('active');
 };
 
 var clearAllActive = function(links) {
@@ -38,5 +51,5 @@ var app = {};
 app.navigate = function(e) {
   var $contents = document.getElementById('contents');
   $contents.innerHTML = htmlGrabber[e.target.innerHTML];
-  setActiveButton(e.target);
+  setActiveButton(e.target.innerText);
 }
