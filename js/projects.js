@@ -58,8 +58,60 @@ var projectGrabber = {
                         '<td><a href="https://coveralls.io/github/rdavid1099/passr?branch=master" target="_blank">Coveralls</a></td>' +
                       '</tr>' +
                     '</table>',
-  'Acquire-A-Hire': '<h3>Acquire-A-Hire</h3>',
-  'RyPass':         '<h3>RyPass</h3>'
+  'Acquire-A-Hire': '<h3>Acquire-A-Hire</h3>' +
+                    '<p>' +
+                      'Nearing the end of the Turing curriculum, we were placed in groups of four and tasked with "cloning" a popular website.<br><br>Our group created a clone of ' +
+                      '<a href="https://www.thumbtack.com/">Thumbtack</a>, the popular app connecting professionals with buyers. Along with the basic functionalities of connecting ' +
+                      'users of different roles with each other, including messaging, we also implemented our own versioned API and handrolled our own OAuth2.0.<br><br>I handled the ' +
+                      'DevOps on this project, deploying the application to DigitalOcean using Capistrano.' +
+                    '</p>' +
+                    '<table class="table">' +
+                      '<tr>' +
+                        '<th>Technologies Used</th>' +
+                        '<th>Resources</th>' +
+                      '</tr>' +
+                      '<tr>' +
+                        '<td>Ruby/ Rails</td>' +
+                        '<td><a href="https://github.com/rdavid1099/acquire-a-hire" target="_blank">GitHub Repo</a></td>' +
+                      '</tr>' +
+                      '<tr>' +
+                        '<td>JavaScript/ JQuery</td>' +
+                        '<td></td>' +
+                      '</tr>' +
+                      '<tr>' +
+                        '<td>Capistrano/ DigitalOcean</td>' +
+                        '<td></td>' +
+                      '</tr>' +
+                    '</table>',
+  'RyPass':         '<h3>RyPass</h3>' +
+                    '<p>' +
+                      'Passr is a simple Ruby gem handling password generation, encryption and decryption.<br>' +
+                      '<br>I developed all of the logic behind the password generation and used <a href="https://github.com/cryptosphere/rbnacl-libsodium" target="_blank">RbNaCl::Libsodium</a> ' +
+                      'to handle all of the encryption.<br>' +
+                      '<br>The code is open-source and the gem is being hosted RubyGems.org.<br>' +
+                    '</p>' +
+                    '<table class="table">' +
+                      '<tr>' +
+                        '<th>Technologies Used</th>' +
+                        '<th>Resources</th>' +
+                      '</tr>' +
+                      '<tr>' +
+                        '<td>Ruby</td>' +
+                        '<td><a href="https://rubygems.org/gems/passr" target="_blank">RubyGems.org</a></td>' +
+                      '</tr>' +
+                      '<tr>' +
+                        '<td>RbNaCl::Libsodium</td>' +
+                        '<td><a href="https://github.com/rdavid1099/passr" target="_blank">GitHub Repo</a></td>' +
+                      '</tr>' +
+                      '<tr>' +
+                        '<td>Bundler</td>' +
+                        '<td><a href="https://travis-ci.org/rdavid1099/passr" target="_blank">Travis CI</a></td>' +
+                      '</tr>' +
+                      '<tr>' +
+                        '<td></td>' +
+                        '<td><a href="https://coveralls.io/github/rdavid1099/passr?branch=master" target="_blank">Coveralls</a></td>' +
+                      '</tr>' +
+                    '</table>'
 };
 
 var projects = {};
