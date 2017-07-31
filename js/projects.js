@@ -67,4 +67,12 @@ var projects = {};
 projects.displayProject = function(e) {
   var $contents = document.getElementById('project-contents');
   $contents.innerHTML = projectGrabber[e.currentTarget.firstElementChild.innerText];
+  setActiveProject(e.currentTarget);
+};
+
+var setActiveProject = function(e) {
+  for (var i = 1; i < e.parentElement.children.length; i++) {
+    e.parentElement.children[i].classList.remove('active');
+  }
+  e.classList.add('active');
 };
