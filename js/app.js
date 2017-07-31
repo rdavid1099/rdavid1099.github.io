@@ -102,3 +102,7 @@ app.navigate = function(e) {
   $contents.innerHTML = htmlGrabber[e.target.innerHTML];
   setActiveButton(e.target.innerText);
 };
+
+window.onload = function() {
+  document.getElementById('contents').innerHTML = htmlGrabber['about'];
+};
