@@ -27,7 +27,45 @@ var htmlGrabber = {
               '</div>' +
              '</div>' +
            '</div>',
-  'projects': '<h1>PROJECTS</h1>',
+  'projects': '<div id="projects">' +
+                '<div class="page-header">' +
+                  '<h1>Projects <small>side projects, open-source contributions, etc.</small></h1>' +
+                '</div>' +
+                '<div class="row">' +
+                  '<div class="col-xs-9">' +
+                    '<div class="row">' +
+                      '<center>' +
+                        '<div class="col-xs-3">' +
+                          '<h4>Notable Projects</h4>' +
+                          '<div class="well active" onclick="projects.displayProject(event)">' +
+                            '<h5>Passavr</h5>' +
+                            '<p>All-in-one secure password management web application.</p>' +
+                          '</div>' +
+                          '<div class="well" onclick="projects.displayProject(event)">' +
+                            '<h5>Passr Gem</h5>' +
+                            '<p>All-in-one password generation, encryption and decryption Ruby gem.</p>' +
+                          '</div>' +
+                          '<div class="well" onclick="projects.displayProject(event)">' +
+                            '<h5>Acquire-A-Hire</h5>' +
+                            '<p>Turing project recreating the web application Thumbtack.</p>' +
+                          '</div>' +
+                          '<div class="well" onclick="projects.displayProject(event)">' +
+                            '<h5>RyPass</h5>' +
+                            '<p>CLI password generator and storage tool.</p>' +
+                          '</div>' +
+                        '</div>' +
+                      '</center>' +
+                      '<div class="col-xs-9 well" id="project-contents">' +
+                        projectGrabber['Passavr'] +
+                      '</div>' +
+                    '</div>' +
+                  '</div>' +
+                  '<div id="repos" class="col-xs-3">' +
+                    '<p>Recent Repos</p>' +
+                  '</div>' +
+                '</div>' +
+              '</div>'
+,
   'resume': '<h1>RESUME</h1>',
   'contact': '<h1>CONTACT</h1>'
 };
