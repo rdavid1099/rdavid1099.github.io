@@ -45,7 +45,6 @@ about.populateMedium = function() {
 
 var loadRecentPosts = function($medium) {
   var innerHTML = '<h4>Recent Medium Posts</h4>';
-  debugger
   var postKeys = Object.keys(mediumPosts);
   postKeys.slice(0,4).forEach(function(key) {
     innerHTML += '<div class="panel panel-default">' +
