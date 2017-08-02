@@ -22,7 +22,10 @@ var htmlGrabber = {
                     aboutMe +
                  '</p>' +
                '</div>' +
-              '<div id="medium" class="col-xs-3 well">' +
+              '<div class="col-xs-3 well">' +
+                '<h4>Recent Medium Posts</h4>' +
+                '<div id="medium">' +
+                '</div>' +
               '</div>' +
              '</div>' +
            '</div>',

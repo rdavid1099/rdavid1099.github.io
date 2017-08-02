@@ -9,28 +9,32 @@ var mediumPosts,
           "firstPublishedAt": 1485992028073,
           "content": {
               "subtitle": "If you’ve read any of my previous posts, you probably know that I am a recent graduate of the Turing School of Software and Design. After…",
-          }
+          },
+          "uniqueSlug": "getting-the-most-out-of-a-coding-school-bd1a9a130188"
         },
         "1111": {
           "title": "Dealing with the Impostor Inside All of Us",
           "firstPublishedAt": 1485384754341,
           "content": {
               "subtitle": "I recently graduated from the Denver-based code school Turing School of Software and Design, and it was the first time I came face-to-face…",
-          }
+          },
+          "uniqueSlug": "dealing-with-the-impostor-inside-all-of-us-9f0478bf14b1"
         },
         "2222": {
           "title": "A New Web Developer’s First Brownfield Experience",
           "firstPublishedAt": 1484686878658,
           "content": {
               "subtitle": "Learning computer programming and web design is a lot like learning anything else, you tread water, slowly introducing new concepts to…",
-          }
+          },
+          "uniqueSlug": "a-new-web-developers-first-brownfield-experience-39d898bdba33"
         },
         "3333": {
           "title": "The Wonderful World of C# or: How I Learned to Stop Worrying and Love the Compiler",
           "firstPublishedAt": 1483125553907,
           "content": {
               "subtitle": "Before we begin, let’s quickly take a quick trip down memory lane. I have spent the past five years working my way up the ranks of local…",
-          }
+          },
+          "uniqueSlug": "the-wonderful-world-of-c-or-how-i-learned-to-stop-worrying-and-love-the-compiler-69a2f9216096"
         }
       }
     }
@@ -44,10 +48,11 @@ about.populateMedium = function() {
 };
 
 var loadRecentPosts = function($medium) {
-  var innerHTML = '<h4>Recent Medium Posts</h4>';
+  var innerHTML = '';
   var postKeys = Object.keys(mediumPosts);
   postKeys.slice(0,4).forEach(function(key) {
-    innerHTML += '<div class="panel panel-default">' +
+    innerHTML += '<a href="https://medium.com/@rdavid1099/' + mediumPosts[key].uniqueSlug + '" target="_blank">' +
+                 '<div class="panel panel-default">' +
                    '<div class="panel-heading">' +
                      '<h5 class="panel-title">' + mediumPosts[key].title + '</h5>' +
                    '</div>' +
@@ -55,7 +60,8 @@ var loadRecentPosts = function($medium) {
                      mediumPosts[key].content.subtitle + '<br>' +
                      'Published: ' + convertTime(mediumPosts[key].firstPublishedAt) +
                    '</div>' +
-                 '</div>';
+                 '</div>' +
+                 '</a>';
   });
   $medium.innerHTML = innerHTML;
 };

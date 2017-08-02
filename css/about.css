@@ -2,7 +2,7 @@
   display: table;
 }
 
-#about .col-xs-9, #about .col-xs-3 {
+#about .col-xs-9, #about .col-xs-3, #medium {
   display: table-cell;
   height: 45vh;
   overflow: scroll;
