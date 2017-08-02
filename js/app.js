@@ -104,4 +104,5 @@ app.navigate = function(e, cb) {
 
 window.onload = function() {
   document.getElementById('contents').innerHTML = htmlGrabber['about'];
+  about.populateMedium();
 };
