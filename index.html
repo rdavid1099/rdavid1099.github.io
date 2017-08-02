@@ -7,6 +7,7 @@
     <title>Ryan Workman - Full-Stack Web Developer</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/project.css">
     <link rel="stylesheet" href="css/navigation.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/master.css">
@@ -21,25 +22,25 @@
         <h3 class="job-title">Full Stack Web Developer</h2>
         <div class="resource-links row">
           <div class="col-xs-3">
-            <a href="https://twitter.com/ProducerWorkman"><img src="images/twitter-icon-circle-logo.png"></a>
+            <a href="https://twitter.com/ProducerWorkman" target="_blank"><img src="images/twitter-icon-circle-logo.png"></a>
           </div>
           <div class="col-xs-3">
-            <a href="https://www.linkedin.com/in/ryan-workman"><img src="images/linkedin-logo-3.png"></a>
+            <a href="https://www.linkedin.com/in/ryan-workman" target="_blank"><img src="images/linkedin-logo-3.png"></a>
           </div>
           <div class="col-xs-3">
-            <a href="https://medium.com/@rdavid1099"><img src="images/medium-logo.png"></a>
+            <a href="https://medium.com/@rdavid1099" target="_blank"><img src="images/medium-logo.png"></a>
           </div>
           <div class="col-xs-3">
-            <a href="https://github.com/rdavid1099"><img src="images/github-icon-circle-logo.png"></a>
+            <a href="https://github.com/rdavid1099" target="_blank"><img src="images/github-icon-circle-logo.png"></a>
           </div>
         </div>
       </center>
       <div class="row" id='nav-links'>
         <div class="col-xs-3">
-          <p class='nav-link active' onclick="app.navigate(event)">about</p>
+          <p class='nav-link active' onclick="app.navigate(event, function() {about.populateMedium()})">about</p>
         </div>
         <div class="col-xs-3">
-          <p class='nav-link' onclick="app.navigate(event)">projects</p>
+          <p class='nav-link' onclick="app.navigate(event, function() {projects.populateRepos()})">projects</p>
         </div>
         <div class="col-xs-3">
           <p class='nav-link' onclick="app.navigate(event)">resume</p>
@@ -51,23 +52,6 @@
     </div>
 
     <div class="container" id='contents'>
-      <div id="about">
-        <div class="page-header">
-          <h1>About Me <small>Ryan Workman</small></h1>
-        </div>
-        <div class="row">
-          <div class="col-xs-9 well">
-            <p>
-              <br>I am a full-stack web developer who graduated from the <a href="https://www.turing.io/">Turing School of Software and Design</a> in January of 2017.<br>
-              <br>Before pursuing programming, I got my B.A. in Journalism from the University of Northern Colorado and spent five years producing news shows for various communities across the United States.<br>
-              <br>I am now using technology and web design to continue my passion for helping communities and the people living within them.<br>
-            </p>
-          </div>
-          <div id="twitter" class="col-xs-3" style="background-color: red;">
-            <p>TWITTER FEED</p>
-          </div>
-        </div>
-      </div>
     </div>
 
     <div id="footer" class="row">
@@ -98,6 +82,8 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/projects.js"></script>
+    <script src="js/about.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>

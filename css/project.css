@@ -1,0 +1,29 @@
+#projects h5 {
+  font-weight: bold;
+}
+
+#projects .row .col-xs-9 .row .col-xs-3 .well {
+  background-color: #B3E4FB;
+  padding: 5px;
+}
+
+#projects .row .col-xs-9 .row .col-xs-3 .well:hover {
+  cursor: pointer;
+  background-color: #03a9f3;
+  -webkit-transition: background-color 350ms linear;
+  -ms-transition: background-color 350ms linear;
+  transition: background-color 350ms linear;
+}
+
+#projects .row .col-xs-9 .row .col-xs-3 .well.active {
+  background-color: #03a9f3;
+}
+
+#projects .row .col-xs-9 .row .col-xs-3 .well.active p, #projects .row .col-xs-9 .row .col-xs-3 .well.active h5 {
+  color: #EFEFEF;
+}
+
+#repos {
+  margin: 0px 0px 0px 2%;
+  width: 23%;
+}
