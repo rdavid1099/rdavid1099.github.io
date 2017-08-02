@@ -34,7 +34,7 @@ var projectGrabber = {
                       'Passr is a simple Ruby gem handling password generation, encryption and decryption.<br>' +
                       '<br>I developed all of the logic behind the password generation and used <a href="https://github.com/cryptosphere/rbnacl-libsodium" target="_blank">RbNaCl::Libsodium</a> ' +
                       'to handle all of the encryption.<br>' +
-                      '<br>The code is open-source and the gem is being hosted RubyGems.org.<br>' +
+                      '<br>The code is open-source and the gem is being hosted RubyGems.org and is fully <a href="http://www.rubydoc.info/github/rdavid1099/passr/master">documented</a> using YARD.<br>' +
                     '</p>' +
                     '<table class="table">' +
                       '<tr>' +
@@ -85,10 +85,11 @@ var projectGrabber = {
                     '</table>',
   'RyPass':         '<h3>RyPass</h3>' +
                     '<p>' +
-                      'Passr is a simple Ruby gem handling password generation, encryption and decryption.<br>' +
-                      '<br>I developed all of the logic behind the password generation and used <a href="https://github.com/cryptosphere/rbnacl-libsodium" target="_blank">RbNaCl::Libsodium</a> ' +
-                      'to handle all of the encryption.<br>' +
-                      '<br>The code is open-source and the gem is being hosted RubyGems.org.<br>' +
+                      'RyPass is an open-source CLI password manager. I was inspired while working on the open-source text RPG framework <a href="https://github.com/nskins/goby" target="_blank">Goby</a> ' +
+                      'to create a basic CLI.<br>' +
+                      '<br>RyPass utilizes RbNaCl::Libsodium to handle encryption and decryption. After generating a random and secure password, it is encrypted and saved within a CSV in the client\'s ' +
+                      'home directory. The passwords can only be decrypted and displayed if running with the user\'s credentials within their terminal.<br>' +
+                      '<br>The CLI is installed using a shell script and is fully <a href="http://www.rubydoc.info/github/rdavid1099/rypass/master" target="_blank">documented</a> using YARD.<br>' +
                     '</p>' +
                     '<table class="table">' +
                       '<tr>' +
@@ -97,19 +98,11 @@ var projectGrabber = {
                       '</tr>' +
                       '<tr>' +
                         '<td>Ruby</td>' +
-                        '<td><a href="https://rubygems.org/gems/passr" target="_blank">RubyGems.org</a></td>' +
+                        '<td><a href="https://github.com/rdavid1099/rypass" target="_blank">GitHub Repo</a></td>' +
                       '</tr>' +
                       '<tr>' +
                         '<td>RbNaCl::Libsodium</td>' +
-                        '<td><a href="https://github.com/rdavid1099/passr" target="_blank">GitHub Repo</a></td>' +
-                      '</tr>' +
-                      '<tr>' +
-                        '<td>Bundler</td>' +
-                        '<td><a href="https://travis-ci.org/rdavid1099/passr" target="_blank">Travis CI</a></td>' +
-                      '</tr>' +
-                      '<tr>' +
-                        '<td></td>' +
-                        '<td><a href="https://coveralls.io/github/rdavid1099/passr?branch=master" target="_blank">Coveralls</a></td>' +
+                        '<td><a href="https://github.com/rdavid1099/rypass/blob/master/README.md" target="_blank">Operating Guide</a></td>' +
                       '</tr>' +
                     '</table>'
 };
