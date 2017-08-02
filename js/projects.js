@@ -115,6 +115,10 @@ projects.displayProject = function(e) {
   setActiveProject(e.currentTarget);
 };
 
+projects.populateRepos = function() {
+
+};
+
 var setActiveProject = function(e) {
   for (var i = 1; i < e.parentElement.children.length; i++) {
     e.parentElement.children[i].classList.remove('active');

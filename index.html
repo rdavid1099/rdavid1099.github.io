@@ -37,10 +37,10 @@
       </center>
       <div class="row" id='nav-links'>
         <div class="col-xs-3">
-          <p class='nav-link active' onclick="app.navigate(event)">about</p>
+          <p class='nav-link active' onclick="app.navigate(event, function() {about.populateMedium()})">about</p>
         </div>
         <div class="col-xs-3">
-          <p class='nav-link' onclick="app.navigate(event)">projects</p>
+          <p class='nav-link' onclick="app.navigate(event, function() {projects.populateRepos()})">projects</p>
         </div>
         <div class="col-xs-3">
           <p class='nav-link' onclick="app.navigate(event)">resume</p>
@@ -83,6 +83,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/projects.js"></script>
+    <script src="js/about.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>

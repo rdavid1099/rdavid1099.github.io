@@ -22,8 +22,7 @@ var htmlGrabber = {
                     aboutMe +
                  '</p>' +
                '</div>' +
-              '<div id="twitter" class="col-xs-3" style="background-color: red;">' +
-                '<p>TWITTER FEED</p>' +
+              '<div id="medium" class="col-xs-3 well">' +
               '</div>' +
              '</div>' +
            '</div>',
@@ -60,8 +59,7 @@ var htmlGrabber = {
                       '</div>' +
                     '</div>' +
                   '</div>' +
-                  '<div id="repos" class="col-xs-3">' +
-                    '<p>Recent Repos</p>' +
+                  '<div id="repos" class="col-xs-3 well">' +
                   '</div>' +
                 '</div>' +
               '</div>'
@@ -97,10 +95,11 @@ var clearAllActive = function(links) {
 
 var app = {};
 
-app.navigate = function(e) {
+app.navigate = function(e, cb) {
   var $contents = document.getElementById('contents');
   $contents.innerHTML = htmlGrabber[e.target.innerHTML];
   setActiveButton(e.target.innerText);
+  if (cb) { cb() }
 };
 
 window.onload = function() {
