@@ -1,8 +1,14 @@
+#about .row {
+  display: table;
+}
+
+#about .col-xs-9, #about .col-xs-3, #medium {
+  display: table-cell;
+  height: 45vh;
+  overflow: scroll;
+}
+
 #about .col-xs-9.well {
   margin: 0px 1vw 20px 1vw;
   width: 70%;
-}
-
-#medium {
-
 }

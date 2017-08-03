@@ -105,9 +105,29 @@ var projectGrabber = {
                         '<td><a href="https://github.com/rdavid1099/rypass/blob/master/README.md" target="_blank">Operating Guide</a></td>' +
                       '</tr>' +
                     '</table>'
-};
-
-var projects = {};
+},  gitHubRepos,
+    stubbedRepos = [
+      {"name": "rdavid1099.github.io",
+       "html_url": "https://github.com/rdavid1099/rdavid1099.github.io",
+       "description": null,
+       "pushed_at": "2017-08-03T02:47:39Z",
+       "language": "HTML"},
+      {"name": "event-manager-python",
+       "html_url": "https://github.com/rdavid1099/event-manager-python",
+       "description": "'Event Manager' project from the Turing School of Software and Design created using Python",
+       "pushed_at": "2017-07-31T14:57:06Z",
+       "language": null},
+      {"name": "paramorse-js",
+       "html_url": "https://github.com/rdavid1099/paramorse-js",
+       "description": "Recreating Turing School's ParaMorse project in NodeJS",
+       "pushed_at": "2017-06-20T23:17:14Z",
+       "language": "JavaScript"},
+      {"name": "passavr",
+       "html_url": "https://github.com/rdavid1099/passavr",
+       "description": "All-in-one secure password management web application",
+       "pushed_at": "2017-05-19T02:48:59Z",
+       "language": "Ruby"}],
+    projects = {}
 
 projects.displayProject = function(e) {
   var $contents = document.getElementById('project-contents');
@@ -116,7 +136,39 @@ projects.displayProject = function(e) {
 };
 
 projects.populateRepos = function() {
+  gitHubRepos = stubbedRepos // REMOVE FORCED STUBS BEFORE DEPLOY
+  var $repos = document.getElementById('repos');
+  gitHubRepos ? loadRecentRepos($repos) : getRecentRepos($repos);
+};
 
+var loadRecentRepos = function($repos) {
+  var innerHTML = '<h4>Recent Contributions</h4>';
+  gitHubRepos.forEach(function(repo) {
+    innerHTML += '<a href="' + repo.html_url + '" target="_blank">' +
+                 '<div class="panel panel-default">' +
+                   '<div class="panel-heading">' +
+                     '<h5 class="panel-title">' + repo.name + '</h5>' +
+                   '</div>' +
+                   '<div class="panel-body">' +
+                     (repo.description ? repo.description : '<i>No Description</i>') + '<br>' +
+                     '<br><strong>Updated ' + convertTime(repo.pushed_at) + '</strong>' +
+                   '</div>' +
+                 '</div>' +
+                 '</a>';
+  });
+  $repos.innerHTML = innerHTML;
+};
+
+var getRecentRepos = function($repos) {
+  $.get( "https://api.github.com/users/rdavid1099/repos?sort=pushed&type=all", function( data ) {
+    console.log(data);
+    gitHubRepos = data.slice(0,4);
+  }).fail(function(err) {
+    console.error('An error occurred, loading backup data.');
+    gitHubRepos = stubbedRepos;
+  }).always(function() {
+    loadRecentRepos($repos);
+  });
 };
 
 var setActiveProject = function(e) {

@@ -22,7 +22,10 @@ var htmlGrabber = {
                     aboutMe +
                  '</p>' +
                '</div>' +
-              '<div id="medium" class="col-xs-3 well">' +
+              '<div class="col-xs-3 well">' +
+                '<h4>Recent Medium Posts</h4>' +
+                '<div id="medium">' +
+                '</div>' +
               '</div>' +
              '</div>' +
            '</div>',
@@ -62,8 +65,7 @@ var htmlGrabber = {
                   '<div id="repos" class="col-xs-3 well">' +
                   '</div>' +
                 '</div>' +
-              '</div>'
-,
+              '</div>',
   'resume': '<h1>RESUME</h1>',
   'contact': '<h1>CONTACT</h1>'
 };
@@ -102,6 +104,12 @@ app.navigate = function(e, cb) {
   if (cb) { cb() }
 };
 
+var convertTime = function(rawTime) {
+  var date = new Date(rawTime);
+  return date.toGMTString().split(' ').slice(0,4).join(' ');
+};
+
 window.onload = function() {
   document.getElementById('contents').innerHTML = htmlGrabber['about'];
+  about.populateMedium();
 };
