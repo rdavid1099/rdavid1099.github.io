@@ -1,13 +1,4 @@
-#about {
-  display: table;
-}
-
-#about .row {
-  display: table-row;
-}
-
 #about .col-xs-3, #about .col-xs-9.well  {
-  display: table-cell;
   max-height: 462px;
 }
 

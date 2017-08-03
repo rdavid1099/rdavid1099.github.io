@@ -1,0 +1,41 @@
+@media (max-width: 414px) {
+  #navigation #nav-links .col-xs-3 p {
+    font-size: 1.2em;
+  }
+
+  #navigation .resource-links.row img {
+    width: 6vw;
+  }
+
+  #navigation .resource-links.row {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  #footer p, #footer a {
+    font-size: 0.6em;
+  }
+}
+
+@media (max-width: 992px) {
+
+}
+
+@media (max-width: 1200px) {
+  #about .page-header h1 {
+    font-size: 1.8em;
+  }
+
+  #about .row .col-xs-9.well {
+    margin: 0px 0px 15px 0;
+    width: 100%;
+    max-height: 100%;
+  }
+
+  #about .row .col-xs-3.well {
+    overflow: visible;
+    width: 100%;
+    max-height: 100%;
+  }
+}
