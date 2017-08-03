@@ -3,7 +3,7 @@
 }
 
 #projects .row .col-xs-9, #projects .row .col-xs-3 {
-  max-height: 570px;
+  max-height: 535px;
 }
 
 #projecs .row .col-xs-9 .row .col-xs-3 {
@@ -21,6 +21,16 @@
   text-overflow: ellipsis;
 }
 
+.dropdown-menu li {
+  margin: 0;
+  text-align: center;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  cursor: pointer;
+  background-color: #B3E4FB;
+}
+
 .dropdown .dropdown-menu {
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
@@ -35,14 +45,13 @@
 }
 
 .dropdown.open .dropdown-menu {
-  max-height: 100%;
+  max-height: 95px;
   opacity: 1;
 }
 
 .open>.dropdown-menu {
   left: 50%;
   right: auto;
-  text-align: center;
   transform: translate(-50%, 0);
 }
 

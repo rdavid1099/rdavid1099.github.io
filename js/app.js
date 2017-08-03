@@ -58,14 +58,7 @@ var htmlGrabber = {
                         '</div>' +
                       '</center>' +
                       '<div class="col-xs-9 well" id="project-contents">' +
-                        '<div class="dropdown" id="menu-btn">' +
-                          '<button type="button" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">' +
-                            '<span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> Projects' +
-                          '</button>' +
-                          '<ul class="dropdown-menu">' +
-                            '<li class="dropdown-item">Shit</li>' +
-                          '</ul>' +
-                        '</div>' +
+                        projectGrabber['repoButton'] +
                         projectGrabber['Passavr'] +
                       '</div>' +
                     '</div>' +
