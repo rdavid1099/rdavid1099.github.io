@@ -136,7 +136,7 @@ projects.displayProject = function(e) {
 };
 
 projects.populateRepos = function() {
-  // gitHubRepos = stubbedRepos // REMOVE FORCED STUBS BEFORE DEPLOY
+  gitHubRepos = stubbedRepos // REMOVE FORCED STUBS BEFORE DEPLOY
   var $repos = document.getElementById('repos');
   gitHubRepos ? loadRecentRepos($repos) : getRecentRepos($repos);
 };
