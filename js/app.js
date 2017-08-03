@@ -37,7 +37,7 @@ var htmlGrabber = {
                   '<div class="col-xs-9">' +
                     '<div class="row">' +
                       '<center>' +
-                        '<div class="col-xs-3">' +
+                        '<div class="col-xs-3" id="menu-display">' +
                           '<h4>Notable Projects</h4>' +
                           '<div class="well active" onclick="projects.displayProject(event)">' +
                             '<h5>Passavr</h5>' +
@@ -58,6 +58,14 @@ var htmlGrabber = {
                         '</div>' +
                       '</center>' +
                       '<div class="col-xs-9 well" id="project-contents">' +
+                        '<div class="dropdown" id="menu-btn">' +
+                          '<button type="button" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">' +
+                            '<span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> Projects' +
+                          '</button>' +
+                          '<ul class="dropdown-menu">' +
+                            '<li class="dropdown-item">Shit</li>' +
+                          '</ul>' +
+                        '</div>' +
                         projectGrabber['Passavr'] +
                       '</div>' +
                     '</div>' +

@@ -6,6 +6,51 @@
   max-height: 570px;
 }
 
+#projecs .row .col-xs-9 .row .col-xs-3 {
+  display: initial;
+}
+
+#menu-btn {
+  display: none;
+  float: right;
+}
+
+.dropdown-menu {
+  min-width: 140px;
+  max-width: 160px;
+  text-overflow: ellipsis;
+}
+
+.dropdown .dropdown-menu {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+
+  max-height: 0;
+  display: block;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.dropdown.open .dropdown-menu {
+  max-height: 100%;
+  opacity: 1;
+}
+
+.open>.dropdown-menu {
+  left: 50%;
+  right: auto;
+  text-align: center;
+  transform: translate(-50%, 0);
+}
+
+#menu-btn .btn {
+  background-color: #03a9f3;
+  color: #FEFEFE;
+}
+
 #projects .row .col-xs-9 .row .col-xs-3 .well {
   background-color: #B3E4FB;
   padding: 5px;
