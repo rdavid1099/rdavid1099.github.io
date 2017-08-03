@@ -42,7 +42,7 @@ var mediumPosts,
 };
 
 about.populateMedium = function() {
-  mediumPosts = stubbedPosts.payload.references.Post;
+  mediumPosts = stubbedPosts.payload.references.Post // REMOVE FORCED STUBS BEFORE DEPLOY
   $medium = document.getElementById('medium');
   mediumPosts ? loadRecentPosts($medium) : getRecentPosts($medium)
 };
@@ -58,7 +58,7 @@ var loadRecentPosts = function($medium) {
                    '</div>' +
                    '<div class="panel-body">' +
                      mediumPosts[key].content.subtitle + '<br>' +
-                     '<strong>Published: ' + convertTime(mediumPosts[key].firstPublishedAt) + '</strong>' +
+                     '<br><strong>' + convertTime(mediumPosts[key].firstPublishedAt) + '</strong>' +
                    '</div>' +
                  '</div>' +
                  '</a>';
@@ -71,14 +71,9 @@ var getRecentPosts = function($medium) {
     console.log(data.payload.references.Post);
     mediumPosts = data.payload.references.Post;
   }).fail(function(err) {
-    console.error(err);
+    console.error('An error occurred, loading backup data.');
     mediumPosts = stubbedPosts.payload.references.Post;
   }).always(function() {
     loadRecentPosts($medium);
   });
-};
-
-var convertTime = function(rawTime) {
-  var date = new Date(rawTime);
-  return date.toGMTString().split(' ').slice(0,4).join(' ');
 };

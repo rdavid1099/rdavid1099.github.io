@@ -12,13 +12,3 @@
   margin: 0px 1vw 20px 1vw;
   width: 70%;
 }
-
-#medium .panel-heading {
-  background-color: #03a9f3;
-  color: #B3E4FB;
-}
-
-#medium a:hover .panel-heading {
-  background-color: #0288d0;
-  color: #FEFEFE;
-}

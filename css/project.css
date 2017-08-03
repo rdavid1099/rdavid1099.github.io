@@ -26,4 +26,6 @@
 #repos {
   margin: 0px 0px 0px 2%;
   width: 23%;
+  height: 47vh;
+  overflow: scroll;
 }

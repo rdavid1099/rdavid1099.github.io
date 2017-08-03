@@ -104,6 +104,11 @@ app.navigate = function(e, cb) {
   if (cb) { cb() }
 };
 
+var convertTime = function(rawTime) {
+  var date = new Date(rawTime);
+  return date.toGMTString().split(' ').slice(0,4).join(' ');
+};
+
 window.onload = function() {
   document.getElementById('contents').innerHTML = htmlGrabber['about'];
   about.populateMedium();

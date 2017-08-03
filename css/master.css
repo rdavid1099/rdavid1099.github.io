@@ -14,3 +14,13 @@ a:hover {
   text-decoration: none;
   color: #212121;
 }
+
+#medium .panel-heading, #repos .panel-heading {
+  background-color: #03a9f3;
+  color: #B3E4FB;
+}
+
+#medium a:hover .panel-heading, #repos a:hover .panel-heading {
+  background-color: #0288d0;
+  color: #FEFEFE;
+}
