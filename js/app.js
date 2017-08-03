@@ -65,8 +65,7 @@ var htmlGrabber = {
                   '<div id="repos" class="col-xs-3 well">' +
                   '</div>' +
                 '</div>' +
-              '</div>'
-,
+              '</div>',
   'resume': '<h1>RESUME</h1>',
   'contact': '<h1>CONTACT</h1>'
 };

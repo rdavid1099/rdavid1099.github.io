@@ -58,7 +58,7 @@ var loadRecentPosts = function($medium) {
                    '</div>' +
                    '<div class="panel-body">' +
                      mediumPosts[key].content.subtitle + '<br>' +
-                     'Published: ' + convertTime(mediumPosts[key].firstPublishedAt) +
+                     '<strong>Published: ' + convertTime(mediumPosts[key].firstPublishedAt) + '</strong>' +
                    '</div>' +
                  '</div>' +
                  '</a>';
