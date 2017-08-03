@@ -109,23 +109,23 @@ var projectGrabber = {
     stubbedRepos = [
       {"name": "rdavid1099.github.io",
        "html_url": "https://github.com/rdavid1099/rdavid1099.github.io",
-       "description": null,
-       "pushed_at": "2017-08-03T02:47:39Z",
+       "description": "<i>No Description</i>",
+       "pushed_at": "Thu, 03 Aug 2017",
        "language": "HTML"},
       {"name": "event-manager-python",
        "html_url": "https://github.com/rdavid1099/event-manager-python",
        "description": "'Event Manager' project from the Turing School of Software and Design created using Python",
-       "pushed_at": "2017-07-31T14:57:06Z",
+       "pushed_at": "Mon, 31 Jul 2017",
        "language": null},
       {"name": "paramorse-js",
        "html_url": "https://github.com/rdavid1099/paramorse-js",
        "description": "Recreating Turing School's ParaMorse project in NodeJS",
-       "pushed_at": "2017-06-20T23:17:14Z",
+       "pushed_at": "Tue, 20 Jun 2017",
        "language": "JavaScript"},
       {"name": "passavr",
        "html_url": "https://github.com/rdavid1099/passavr",
        "description": "All-in-one secure password management web application",
-       "pushed_at": "2017-05-19T02:48:59Z",
+       "pushed_at": "Fri, 19 May 2017",
        "language": "Ruby"}],
     projects = {}
 
@@ -142,21 +142,41 @@ projects.populateRepos = function() {
 };
 
 var loadRecentRepos = function($repos) {
-  var innerHTML = '<h4>Recent Contributions</h4>';
-  gitHubRepos.forEach(function(repo) {
-    innerHTML += '<a href="' + repo.html_url + '" target="_blank">' +
-                 '<div class="panel panel-default">' +
-                   '<div class="panel-heading">' +
-                     '<h5 class="panel-title">' + repo.name + '</h5>' +
+  try {
+    var innerHTML = '<h4>Recent Contributions</h4>';
+    gitHubRepos.forEach(function(repo) {
+      innerHTML += '<a href="' + repo.html_url + '" target="_blank">' +
+                   '<div class="panel panel-default">' +
+                     '<div class="panel-heading">' +
+                       '<h5 class="panel-title">' + repo.name + '</h5>' +
+                     '</div>' +
+                     '<div class="panel-body">' +
+                       (repo.description ? repo.description : '<i>No Description</i>') + '<br>' +
+                       '<br><strong>Updated ' + convertTime(repo.pushed_at) + '</strong>' +
+                     '</div>' +
                    '</div>' +
-                   '<div class="panel-body">' +
-                     (repo.description ? repo.description : '<i>No Description</i>') + '<br>' +
-                     '<br><strong>Updated ' + convertTime(repo.pushed_at) + '</strong>' +
+                   '</a>';
+    });
+  } catch (err) {
+    console.error(err);
+    console.error('Loading backup data');
+    innerHTML = '<h4>Recent Contributions</h4>';
+    gitHubRepos.forEach(function(repo) {
+      innerHTML += '<a href="' + repo.html_url + '" target="_blank">' +
+                   '<div class="panel panel-default">' +
+                     '<div class="panel-heading">' +
+                       '<h5 class="panel-title">' + repo.name + '</h5>' +
+                     '</div>' +
+                     '<div class="panel-body">' +
+                       repo.description + '<br>' +
+                       '<br><strong>Updated ' + repo.pushed_at + '</strong>' +
+                     '</div>' +
                    '</div>' +
-                 '</div>' +
-                 '</a>';
-  });
-  $repos.innerHTML = innerHTML;
+                   '</a>';
+    });
+  } finally {
+    $repos.innerHTML = innerHTML;
+  }
 };
 
 var getRecentRepos = function($repos) {
