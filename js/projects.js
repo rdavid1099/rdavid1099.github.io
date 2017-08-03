@@ -105,7 +105,7 @@ var projectGrabber = {
                         '<td><a href="https://github.com/rdavid1099/rypass/blob/master/README.md" target="_blank">Operating Guide</a></td>' +
                       '</tr>' +
                     '</table>'
-},  gitHubRepos = {},
+},  gitHubRepos,
     stubbedRepos = [
       {"name": "rdavid1099.github.io",
        "html_url": "https://github.com/rdavid1099/rdavid1099.github.io",
@@ -136,9 +136,9 @@ projects.displayProject = function(e) {
 };
 
 projects.populateRepos = function() {
-  gitHubRepos = stubbedRepos // REMOVE FORCED STUBS BEFORE DEPLOY
-  $repos = document.getElementById('repos');
-  gitHubRepos ? loadRecentRepos($repos) : getRecentRepos($repos)
+  // gitHubRepos = stubbedRepos // REMOVE FORCED STUBS BEFORE DEPLOY
+  var $repos = document.getElementById('repos');
+  gitHubRepos ? loadRecentRepos($repos) : getRecentRepos($repos);
 };
 
 var loadRecentRepos = function($repos) {
@@ -167,7 +167,7 @@ var getRecentRepos = function($repos) {
     console.error('An error occurred, loading backup data.');
     gitHubRepos = stubbedRepos;
   }).always(function() {
-    loadRecentPosts($repos);
+    loadRecentRepos($repos);
   });
 };
 
