@@ -2,6 +2,10 @@
   font-weight: bold;
 }
 
+#projects .row .col-xs-9, #projects .row .col-xs-3 {
+  max-height: 570px;
+}
+
 #projects .row .col-xs-9 .row .col-xs-3 .well {
   background-color: #B3E4FB;
   padding: 5px;
@@ -26,6 +30,5 @@
 #repos {
   margin: 0px 0px 0px 2%;
   width: 23%;
-  height: 47vh;
   overflow: scroll;
 }
