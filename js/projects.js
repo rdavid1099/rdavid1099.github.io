@@ -104,7 +104,18 @@ var projectGrabber = {
                         '<td>RbNaCl::Libsodium</td>' +
                         '<td><a href="https://github.com/rdavid1099/rypass/blob/master/README.md" target="_blank">Operating Guide</a></td>' +
                       '</tr>' +
-                    '</table>'
+                    '</table>',
+  'repoButton':     '<div class="dropdown" id="menu-btn">' +
+                      '<button type="button" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">' +
+                        '<span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> Projects' +
+                      '</button>' +
+                      '<ul class="dropdown-menu">' +
+                        '<li class="dropdown-item" onclick="projects.displayProject(event, true)">Passavr</li>' +
+                        '<li class="dropdown-item" onclick="projects.displayProject(event, true)">Passr Gem</li>' +
+                        '<li class="dropdown-item" onclick="projects.displayProject(event, true)">Acquire-A-Hire</li>' +
+                        '<li class="dropdown-item" onclick="projects.displayProject(event, true)">RyPass</li>' +
+                      '</ul>' +
+                    '</div>'
 },  gitHubRepos,
     stubbedRepos = [
       {"name": "rdavid1099.github.io",
@@ -127,11 +138,13 @@ var projectGrabber = {
        "description": "All-in-one secure password management web application",
        "pushed_at": "Fri, 19 May 2017",
        "language": "Ruby"}],
-    projects = {}
+    projects = {};
 
-projects.displayProject = function(e) {
-  var $contents = document.getElementById('project-contents');
-  $contents.innerHTML = projectGrabber[e.currentTarget.firstElementChild.innerText];
+projects.displayProject = function(e, dropdown) {
+  var $contents = document.getElementById('project-contents'),
+      innerText;
+  dropdown ? innerText = e.currentTarget.innerText : innerText = e.currentTarget.firstElementChild.innerText;
+  $contents.innerHTML = projectGrabber['repoButton'] + projectGrabber[innerText];
   setActiveProject(e.currentTarget);
 };
 
