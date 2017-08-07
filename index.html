@@ -4,43 +4,89 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ryan Workman - Web Developer At Large</title>
+    <title>Ryan Workman - Full-Stack Web Developer</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/project.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/master.css">
   </head>
   <body>
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/index.html"><p id='rw-logo'><span class='r'>R</span><span class="w">W</span></p></a>
-          <span id='ryan-workman'><span class='ryan'>Ryan</span><span class='workman'>Workman</span><span class='glyphicon glyphicon-sunglasses'></span></span>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="/about.html">About Me</a></li>
-            <li><a href="/projects.html">Projects</a></li>
-            <li><a href="https://medium.com/@rdavid1099">Blog Posts</a></li>
-            <li><a href="/resume.html">Resumè</a></li>
-          </ul>
-      </div><!-- /.container-fluid -->
-    </nav>
-    <div class="container">
-      <div class="page-header">
-        <h1>Ryan Workman <small>Ruby on Rails Web Developer</small></h1>
-      </div>
-      <div class="row">
-        <div class="col-md-4">
-          <img src="images/IMG_7630.JPG" class="img-responsive">
+    <div id="navigation">
+      <center>
+        <div class="circle-matte">
+          <img class="portrait" src="images/IMG_7790.JPG" alt="Ryan Workman" class="img-responsive">
         </div>
-        <div class="col-md-8">
-          <div class="jumbotron">
-            <h2>Changing the World with Code</h2>
-            <p>For years, I have been fascinated with changing industries and innovating new practices to help everyone succeed.
-              After spending five years as a news producer, I am now using the power of technology improve communities and the businesses within them.</p>
-            <p><a class="btn btn-primary btn-lg" href="/about.html" role="button">Learn more</a></p>
+        <h2 class="name">Ryan Workman</h2>
+        <h3 class="job-title">Full Stack Web Developer</h2>
+        <div class="resource-links row">
+          <div class="col-xs-3">
+            <a href="https://twitter.com/ProducerWorkman" target="_blank"><img src="images/twitter-icon-circle-logo.png"></a>
+          </div>
+          <div class="col-xs-3">
+            <a href="https://www.linkedin.com/in/ryan-workman" target="_blank"><img src="images/linkedin-logo-3.png"></a>
+          </div>
+          <div class="col-xs-3">
+            <a href="https://medium.com/@rdavid1099" target="_blank"><img src="images/medium-logo.png"></a>
+          </div>
+          <div class="col-xs-3">
+            <a href="https://github.com/rdavid1099" target="_blank"><img src="images/github-icon-circle-logo.png"></a>
           </div>
         </div>
+      </center>
+      <div class="row" id='nav-links'>
+        <div class="col-xs-3">
+          <p class='nav-link active' onclick="app.navigate(event, function() {about.populateMedium()})">about</p>
+        </div>
+        <div class="col-xs-3">
+          <p class='nav-link' onclick="app.navigate(event, function() {projects.populateRepos()})">projects</p>
+        </div>
+        <div class="col-xs-3">
+          <p class='nav-link' onclick="app.navigate(event)">resume</p>
+        </div>
+        <div class="col-xs-3">
+          <p class='nav-link' onclick="app.navigate(event, function() {contact.displayForm()})">contact</p>
+        </div>
       </div>
-
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-      <script src="js/bootstrap.min.js"></script>
     </div>
+
+    <div class="container" id='contents'>
+    </div>
+
+    <div id="footer" class="row">
+      <div class="col-xs-4 info">
+        <p>Ryan David Workman</p>
+        <p>Denver, Colorado</p>
+      </div>
+      <div class="col-xs-4">
+        <center>
+          <table>
+            <tr>
+              <td>
+                <p onclick="app.navigate(event)" class="link">about</p>
+                <p onclick="app.navigate(event)" class="link">projects</p>
+              </td>
+              <td>
+                <p onclick="app.navigate(event)" class="link">resume</p>
+                <p onclick="app.navigate(event)" class="link">contact</p>
+              </td>
+            </tr>
+          </table>
+        </center>
+      </div>
+      <div class="col-xs-4">
+        <a href="mailto:rdavid1099@gmail.com" class="link">rdavid1099@gmail.com</a>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/projects.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/about.js"></script>
+    <script src="js/app.js"></script>
+    <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
   </body>
 </html>

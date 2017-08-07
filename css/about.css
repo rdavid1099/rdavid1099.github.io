@@ -1,0 +1,12 @@
+#about .col-xs-3, #about .col-xs-9.well  {
+  max-height: 445px;
+}
+
+#about .col-xs-9.well {
+  margin: 0px 1vw 20px 1vw;
+  width: 70%;
+}
+
+#about .col-xs-3 {
+  overflow: scroll;
+}
