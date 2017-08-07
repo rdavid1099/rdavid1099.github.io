@@ -1,17 +1,18 @@
 var contactGrabber = {
-  'Email':  '<div class="form-group">' +
-                '<input type="text" class="form-control" id="name" placeholder="Name">' +
+  'Email':  '<div class="form-group has-error">' +
+                '<input type="text" class="form-control" name="name" placeholder="Name (Required)">' +
+              '</div>' +
+              '<div class="form-group has-error">' +
+                '<input type="email" class="form-control" name="_replyto" placeholder="Email (Required)">' +
               '</div>' +
               '<div class="form-group">' +
-                '<input type="email" class="form-control" id="email" placeholder="Email">' +
-              '</div>' +
-              '<div class="form-group">' +
-                '<input type="text" class="form-control" id="subject" placeholder="Subject">' +
+                '<input type="text" class="form-control" name="_subject" placeholder="Subject (Optional)">' +
               '</div>' +
               '<div class="form-group">' +
                 '<textarea class="form-control" rows="5" id="body" placeholder="Message"></textarea>' +
               '</div>' +
-              '<button type="button" class="btn btn-default">Send</button>',
+              '<input type="hidden" name="_format" value="plain" />' +
+              '<input type="submit" value="Send" class="btn btn-default" disabled="disabled">',
   'Twitter':  '<div class="form-group">' +
                 '<div class="input-group">' +
                   '<div class="input-group-addon">@ProducerWorkman</div>' +
@@ -27,7 +28,16 @@ var contactGrabber = {
 var contact = {};
 
 contact.displayForm = function(e) {
-  var $form = document.getElementById('contact-form');
+  var $form = document.getElementById('contact-form'),
+      method = {'Email': ['post', 'https://formspree.io/rdavid1099@gmail.com']};
+  e = e || {'target': {'innerText': 'Email'} };
+  if (method[e.target.innerText]) {
+    $form.method = method[e.target.innerText][0];
+    $form.action = method[e.target.innerText][1];
+  } else {
+    $form.method = 'get';
+    $form.action = '';
+  }
   $form.innerHTML = contactGrabber[e.target.innerText];
 };
 
@@ -49,16 +59,5 @@ contact.updateTweet = function(e) {
     $charLimit.classList.remove('limit');
   }
   $charLimit.innerText = 123 - charLength;
-  $tweetInfo.href = 'https://twitter.com/intent/tweet?text=%40ProducerWorkman%20' + encodeURIComponent(e.target.value)
-};
-
-var updateCounter = function(charLimit, cb) {
-  var $charLimit = document.getElementById('char-limit');
-  charLimit -= 1;
-  $charLimit.innerText = charLimit;
-  if (charLimit === 0) {
-    $charLimit.classList.add('limit');
-  } else if (charLimit < 10) {
-    $charLimit.classList.add('danger');
-  }
+  $tweetInfo.href = 'https://twitter.com/intent/tweet?text=%40ProducerWorkman%20' + encodeURIComponent(e.target.value);
 };

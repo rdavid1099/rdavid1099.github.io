@@ -91,7 +91,6 @@ var htmlGrabber = {
                   '</div>' +
                   '<div class="col-xs-9">' +
                     '<form id="contact-form">' +
-                      contactGrabber['Email'] +
                     '</form>' +
                   '</div>' +
                 '</div>' +
