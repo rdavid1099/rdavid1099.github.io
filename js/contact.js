@@ -23,13 +23,14 @@ var contactGrabber = {
               '<a class="tweet-btn" id="tweet-info" ' +
               'href="https://twitter.com/intent/tweet?text=%40ProducerWorkman" ' +
               'target="_blank">Tweet</a>',
-  'LinkedIn': '<script src="//platform.linkedin.com/in.js" type="text/javascript"></script>' +
-              '<script type="IN/MemberProfile" data-id="https://www.linkedin.com/in/ryan-workman" data-format="inline" data-related="false"></script>'
+  'LinkedIn': '<div id="linked-profile">' +
+              '<script type="IN/MemberProfile" data-id="https://www.linkedin.com/in/ryan-workman" data-format="inline" data-related="false"></script>' +
+              '</div>'
 };
 
 var contact = {};
 
-contact.displayForm = function(e) {
+contact.displayForm = function(e, linkedin) {
   var $form = document.getElementById('contact-form'),
       method = {'Email': ['post', 'https://formspree.io/rdavid1099@gmail.com']};
   e = e || {'target': {'innerText': 'Email'} };
@@ -41,6 +42,7 @@ contact.displayForm = function(e) {
     $form.action = '';
   }
   $form.innerHTML = contactGrabber[e.target.innerText];
+  if (linkedin) { IN.parse(document.getElementById("linked-profile")) }
 };
 
 contact.updateTweet = function(e) {

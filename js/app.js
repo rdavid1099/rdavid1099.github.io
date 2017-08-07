@@ -86,7 +86,7 @@ var htmlGrabber = {
                     '<select multiple class="form-control">' +
                       '<option onclick="contact.displayForm(event)">Email</option>' +
                       '<option onclick="contact.displayForm(event)">Twitter</option>' +
-                      '<option onclick="contact.displayForm(event)">LinkedIn</option>' +
+                      '<option onclick="contact.displayForm(event, true)">LinkedIn</option>' +
                     '</select>' +
                   '</div>' +
                   '<div class="col-xs-9">' +
