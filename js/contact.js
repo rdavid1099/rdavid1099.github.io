@@ -42,6 +42,7 @@ contact.displayForm = function(e, linkedin) {
     $form.action = '';
   }
   $form.innerHTML = contactGrabber[e.target.innerText];
+  contact.setActiveButton(e);
   if (linkedin) { IN.parse(document.getElementById("linked-profile")) }
 };
 
@@ -79,6 +80,13 @@ contact.checkMail = function(e, req) {
     }
     if (valid) { document.getElementById('send-btn').disabled = false }
   });
+};
+
+contact.setActiveButton = function(e) {
+  for (var i = 0; i < e.target.parentElement.children.length; i++) {
+    e.target.parentElement.children[i].classList.remove('active');
+  }
+  e.target.classList.add('active');
 };
 
 var validateFields = function(e, cb) {
