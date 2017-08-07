@@ -13,12 +13,15 @@ var contactGrabber = {
               '</div>' +
               '<input type="hidden" name="_format" value="plain" />' +
               '<input id="send-btn" type="submit" value="Send" class="btn btn-default" disabled="disabled">',
-  'Twitter':  '<div class="form-group">' +
+  'Twitter':  '<div class="form-group" id="full-msg">' +
                 '<div class="input-group">' +
                   '<div class="input-group-addon">@ProducerWorkman</div>' +
-                  '<input type="text" class="form-control" id="name" placeholder="Message" onkeyup="contact.updateTweet(event)">' +
+                  '<input type="text" class="form-control" placeholder="Message" onkeyup="contact.updateTweet(event)">' +
                   '<div class="input-group-addon" id="char-limit">123</div>' +
                 '</div>' +
+              '</div>' +
+              '<div class="form-group" id="mobile-msg">' +
+                '<textarea class="form-control" rows="3" placeholder="Tweet" onkeyup="contact.updateTweet(event)"></textarea>' +
               '</div>' +
               '<a class="tweet-btn" id="tweet-info" ' +
               'href="https://twitter.com/intent/tweet?text=%40ProducerWorkman" ' +
@@ -83,6 +86,7 @@ contact.checkMail = function(e, req) {
 };
 
 contact.setActiveButton = function(e) {
+  if (!e.target.parentElement) {return}
   for (var i = 0; i < e.target.parentElement.children.length; i++) {
     e.target.parentElement.children[i].classList.remove('active');
   }
