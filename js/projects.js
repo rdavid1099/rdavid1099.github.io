@@ -194,7 +194,6 @@ var loadRecentRepos = function($repos) {
 
 var getRecentRepos = function($repos) {
   $.get( "https://api.github.com/users/rdavid1099/repos?sort=pushed&type=all", function( data ) {
-    console.log(data);
     gitHubRepos = data.slice(0,4);
   }).fail(function(err) {
     console.error('An error occurred, loading backup data.');
