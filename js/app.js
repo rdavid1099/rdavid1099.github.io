@@ -80,14 +80,14 @@ var htmlGrabber = {
               '</div>' +
               '<div class="well"' +
                 '<p>I\'m always looking to collaborate and learn with other developers, project managers or enthusiasts.<br>' +
-                'Feel free to Tweet at me, email me or connect with me on LinkedIn by using the links below.</p>' +
+                'Feel free to Tweet at me, email me or connect with me on LinkedIn by using the form below.</p>' +
                 '<div class="row">' +
                   '<div class="col-xs-3">' +
-                    '<select multiple class="form-control">' +
-                      '<option onclick="contact.displayForm(event)">Email</option>' +
-                      '<option onclick="contact.displayForm(event)">Twitter</option>' +
-                      '<option onclick="contact.displayForm(event, true)">LinkedIn</option>' +
-                    '</select>' +
+                    '<div class="list-group">' +
+                      '<a class="list-group-item active" onclick="contact.displayForm(event)">Email</option>' +
+                      '<a class="list-group-item" onclick="contact.displayForm(event)">Twitter</option>' +
+                      '<a class="list-group-item" onclick="contact.displayForm(event, true)">LinkedIn</option>' +
+                    '</div>' +
                   '</div>' +
                   '<div class="col-xs-9">' +
                     '<form id="contact-form">' +
