@@ -57,4 +57,16 @@
   #menu-btn {
     display: initial;
   }
+
+  #contact .col-xs-3, #contact .col-xs-9 {
+    width: 100%;
+  }
+
+  #full-msg {
+    display: none;
+  }
+
+  #mobile-msg {
+    display: inital;
+  }
 }
