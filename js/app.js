@@ -67,8 +67,47 @@ var htmlGrabber = {
                   '</div>' +
                 '</div>' +
               '</div>',
-  'resume': '<h1>RESUME</h1>',
-  'contact': '<h1>CONTACT</h1>'
+  'resume': '<div class="page-header">' +
+              '<h1>Resume <small>my professional experience</small></h1>' +
+            '</div>' +
+            '<div class="well">' +
+              '<object data="images/workman_resume.pdf" type="application/pdf" width="100%" height="800px">' +
+                '<p>It appears you don\'t have a PDF plugin for this browser. You can <a href="images/workman_resume.pdf">click here to download the PDF file.</a></p>' +
+              '</object>' +
+            '</div>',
+  'contact': '<div class="page-header">' +
+               '<h1>Contact <small>let\'s get in touch</small></h1>' +
+              '</div>' +
+              '<div class="well"' +
+                '<p>I\'m always looking to collaborate and learn with other developers, project managers or enthusiasts.<br>' +
+                'Feel free to Tweet at me, email me or connect with me on LinkedIn by using the links below.</p>' +
+                '<div class="row">' +
+                  '<div class="col-xs-3">' +
+                    '<select multiple class="form-control">' +
+                      '<option>Email</option>' +
+                      '<option>Twitter</option>' +
+                      '<option>LinkedIn</option>' +
+                    '</select>' +
+                  '</div>' +
+                  '<div class="col-xs-9">' +
+                    '<form id="contact-form">' +
+                      '<div class="form-group">' +
+                        '<input type="text" class="form-control" id="name" placeholder="Name">' +
+                      '</div>' +
+                      '<div class="form-group">' +
+                        '<input type="email" class="form-control" id="email" placeholder="Email">' +
+                      '</div>' +
+                      '<div class="form-group">' +
+                        '<input type="text" class="form-control" id="name" placeholder="Subject">' +
+                      '</div>' +
+                      '<div class="form-group">' +
+                        '<textarea class="form-control" rows="5" placeholder="Message"></textarea>' +
+                      '</div>' +
+                      '<button type="button" class="btn btn-default">Send</button>' +
+                    '</form>' +
+                  '</div>' +
+                '</div>' +
+              '</div>'
 };
 
 var getTargetLink = function($navLinks, innerText, cb) {
