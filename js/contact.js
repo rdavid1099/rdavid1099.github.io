@@ -8,8 +8,8 @@ var contactGrabber = {
               '<div class="form-group">' +
                 '<input type="text" class="form-control" name="_subject" placeholder="Subject (Optional)" onblur="contact.checkMail(event)">' +
               '</div>' +
-              '<div class="form-group">' +
-                '<textarea class="form-control" rows="5" name="message" placeholder="Message" onblur="contact.checkMail(event)"></textarea>' +
+              '<div class="form-group has-error">' +
+                '<textarea class="form-control" rows="5" name="message" placeholder="Message" onblur="contact.checkMail(event, true)"></textarea>' +
               '</div>' +
               '<input type="hidden" name="_format" value="plain" />' +
               '<input id="send-btn" type="submit" value="Send" class="btn btn-default" disabled="disabled">',
@@ -64,14 +64,29 @@ contact.updateTweet = function(e) {
 
 contact.checkMail = function(e, req) {
   if (!req) { return }
+  validateFields(e, function() {
+    var $emailForm = document.getElementById('contact-form').children,
+        valid = true;
+    for (var i = 0; i < $emailForm.length; i++) {
+      if ($emailForm[i].classList[1] === 'has-error') {
+        valid = false;
+        break;
+      }
+    }
+    if (valid) { document.getElementById('send-btn').disabled = false }
+  });
+};
+
+var validateFields = function(e, cb) {
   if ((e.target.name === '_replyto' && validateEmail(e.target.value)) ||
-      (e.target.name === 'name' && e.target.value !== '')) {
+    ((e.target.name === 'name' || e.target.name === 'message') && e.target.value !== '')) {
     e.target.parentElement.classList.remove('has-error');
     e.target.parentElement.classList.add('has-success');
   } else {
     e.target.parentElement.classList.add('has-error');
     e.target.parentElement.classList.remove('has-success');
   }
+  if (cb) { cb() }
 };
 
 var validateEmail = function(email) {
