@@ -76,7 +76,6 @@ var loadRecentPosts = function($medium) {
 
 var getRecentPosts = function($medium) {
   $.get( "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2F%40rdavid1099", function( data ) {
-    console.log(data.items);
     mediumPosts = data.items;
   }).fail(function(err) {
     console.error('An error occurred, loading backup data.');
