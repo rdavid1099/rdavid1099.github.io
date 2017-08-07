@@ -84,26 +84,14 @@ var htmlGrabber = {
                 '<div class="row">' +
                   '<div class="col-xs-3">' +
                     '<select multiple class="form-control">' +
-                      '<option>Email</option>' +
-                      '<option>Twitter</option>' +
-                      '<option>LinkedIn</option>' +
+                      '<option onclick="contact.displayForm(event)">Email</option>' +
+                      '<option onclick="contact.displayForm(event)">Twitter</option>' +
+                      '<option onclick="contact.displayForm(event)">LinkedIn</option>' +
                     '</select>' +
                   '</div>' +
                   '<div class="col-xs-9">' +
                     '<form id="contact-form">' +
-                      '<div class="form-group">' +
-                        '<input type="text" class="form-control" id="name" placeholder="Name">' +
-                      '</div>' +
-                      '<div class="form-group">' +
-                        '<input type="email" class="form-control" id="email" placeholder="Email">' +
-                      '</div>' +
-                      '<div class="form-group">' +
-                        '<input type="text" class="form-control" id="name" placeholder="Subject">' +
-                      '</div>' +
-                      '<div class="form-group">' +
-                        '<textarea class="form-control" rows="5" placeholder="Message"></textarea>' +
-                      '</div>' +
-                      '<button type="button" class="btn btn-default">Send</button>' +
+                      contactGrabber['Email'] +
                     '</form>' +
                   '</div>' +
                 '</div>' +
