@@ -22,3 +22,14 @@ a.tweet-btn:focus {
   outline: none;
   border-color: #0089cb;
 }
+
+.limit {
+  background-color: #D9534F;
+  color: #efefef;
+  transition: background-color 0.3s linear;
+}
+
+.danger {
+  color: #D9534F;
+  transition: color 0.3s linear;
+}
