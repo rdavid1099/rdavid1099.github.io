@@ -1,18 +1,18 @@
 var contactGrabber = {
   'Email':  '<div class="form-group has-error">' +
-                '<input type="text" class="form-control" name="name" placeholder="Name (Required)">' +
+                '<input type="text" class="form-control" name="name" placeholder="Name (Required)" onblur="contact.checkMail(event, true)">' +
               '</div>' +
               '<div class="form-group has-error">' +
-                '<input type="email" class="form-control" name="_replyto" placeholder="Email (Required)">' +
+                '<input type="email" class="form-control" name="_replyto" placeholder="Email (Required)" onblur="contact.checkMail(event, true)">' +
               '</div>' +
               '<div class="form-group">' +
-                '<input type="text" class="form-control" name="_subject" placeholder="Subject (Optional)">' +
+                '<input type="text" class="form-control" name="_subject" placeholder="Subject (Optional)" onblur="contact.checkMail(event)">' +
               '</div>' +
               '<div class="form-group">' +
-                '<textarea class="form-control" rows="5" id="body" placeholder="Message"></textarea>' +
+                '<textarea class="form-control" rows="5" name="message" placeholder="Message" onblur="contact.checkMail(event)"></textarea>' +
               '</div>' +
               '<input type="hidden" name="_format" value="plain" />' +
-              '<input type="submit" value="Send" class="btn btn-default" disabled="disabled">',
+              '<input id="send-btn" type="submit" value="Send" class="btn btn-default" disabled="disabled">',
   'Twitter':  '<div class="form-group">' +
                 '<div class="input-group">' +
                   '<div class="input-group-addon">@ProducerWorkman</div>' +
@@ -60,4 +60,21 @@ contact.updateTweet = function(e) {
   }
   $charLimit.innerText = 123 - charLength;
   $tweetInfo.href = 'https://twitter.com/intent/tweet?text=%40ProducerWorkman%20' + encodeURIComponent(e.target.value);
+};
+
+contact.checkMail = function(e, req) {
+  if (!req) { return }
+  if ((e.target.name === '_replyto' && validateEmail(e.target.value)) ||
+      (e.target.name === 'name' && e.target.value !== '')) {
+    e.target.parentElement.classList.remove('has-error');
+    e.target.parentElement.classList.add('has-success');
+  } else {
+    e.target.parentElement.classList.add('has-error');
+    e.target.parentElement.classList.remove('has-success');
+  }
+};
+
+var validateEmail = function(email) {
+  var validation = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return validation.test(email);
 };
