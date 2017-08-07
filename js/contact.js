@@ -22,7 +22,9 @@ var contactGrabber = {
               '</div>' +
               '<a class="tweet-btn" id="tweet-info" ' +
               'href="https://twitter.com/intent/tweet?text=%40ProducerWorkman" ' +
-              'target="_blank">Tweet</a>'
+              'target="_blank">Tweet</a>',
+  'LinkedIn': '<script src="//platform.linkedin.com/in.js" type="text/javascript"></script>' +
+              '<script type="IN/MemberProfile" data-id="https://www.linkedin.com/in/ryan-workman" data-format="inline" data-related="false"></script>'
 };
 
 var contact = {};
