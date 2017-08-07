@@ -23,6 +23,23 @@ a.tweet-btn:focus {
   border-color: #0089cb;
 }
 
+a.list-group-item {
+  background-color: #B3E4FB;
+}
+
+a.list-group-item:hover {
+  cursor: pointer;
+  background-color: #03A9F3;
+  border-color: #03A9F3;
+}
+
+.list-group-item.active {
+  background-color: #03A9F3;
+  border-color: #03A9F3;
+  color: #efefef;
+  font-weight: 600;
+}
+
 .limit {
   background-color: #D9534F;
   color: #efefef;
