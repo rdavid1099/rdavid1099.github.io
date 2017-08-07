@@ -50,3 +50,11 @@ a.list-group-item:hover {
   color: #D9534F;
   transition: color 0.3s linear;
 }
+
+#full-msg {
+  display: initial;
+}
+
+#mobile-msg {
+  display: none;
+}
