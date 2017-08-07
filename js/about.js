@@ -30,7 +30,7 @@ var mediumPosts,
 };
 
 about.populateMedium = function() {
-  mediumPosts = stubbedPosts.items // REMOVE FORCED STUBS BEFORE DEPLOY
+  // mediumPosts = stubbedPosts.items // REMOVE FORCED STUBS BEFORE DEPLOY
   $medium = document.getElementById('medium');
   mediumPosts ? loadRecentPosts($medium) : getRecentPosts($medium)
 };
