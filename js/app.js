@@ -1,6 +1,6 @@
 var aboutMe = '<br>I am a full-stack web developer who graduated from the <a href="https://www.turing.io/">Turing School of Software and Design</a> in January of 2017.<br>' +
               '<br>Technology has been a passion of mine for as long as I can remember. I taught myself basic HTML and launched my first static web page when I was eight years old. ' +
-              'Since then I have gained professional experience in several different work environments. I have learned from some of the best. Whether it\'s workign directly with the CTO ' +
+              'Since then I have gained professional experience in several different work environments. I have learned from some of the best. Whether it\'s working directly with the CTO ' +
               'of a small business in Denver or the expansive tech team at Dish Network, I always collaborate to my fullest to deliver the best product.<br>' +
               '<br>When I\'m not working on professional applications, I spend my time working on side-projects and contributing to open-source issues. I am always trying to learn more ' +
               'and have been diving into the server-side of applications. I have deployed a few of my Rails projects to DigitalOcean using Capistrano and am working on implementing ' +
