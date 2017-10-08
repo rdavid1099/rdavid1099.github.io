@@ -25,6 +25,7 @@ var htmlGrabber = {
               '<div class="col-xs-3 well">' +
                 '<h4>Recent Medium Posts</h4>' +
                 '<div id="medium">' +
+                  '<div class="loader"></div>' +
                 '</div>' +
               '</div>' +
              '</div>' +
