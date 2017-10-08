@@ -1,6 +1,7 @@
 #navigation {
   background-color: #03a9f3;
-  padding: 2%;
+  padding: 1% 0px 2% 0;
+  margin-bottom: 1%;
 }
 
 #navigation h3, #navigation p {

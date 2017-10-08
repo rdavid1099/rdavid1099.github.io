@@ -13,9 +13,6 @@ var aboutMe = '<br>I am a full-stack web developer who graduated from the <a hre
 
 var htmlGrabber = {
   'about': '<div id="about">' +
-             '<div class="page-header">' +
-               '<h1>About Me <small>Ryan Workman</small></h1>' +
-             '</div>' +
              '<div class="row">' +
                '<div class="col-xs-9 well">' +
                  '<p>' +
@@ -23,16 +20,13 @@ var htmlGrabber = {
                  '</p>' +
                '</div>' +
               '<div class="col-xs-3 well">' +
-                '<h4>Recent Medium Posts</h4>' +
                 '<div id="medium">' +
+                  '<center><div class="loader"></div></center>' +
                 '</div>' +
               '</div>' +
              '</div>' +
            '</div>',
   'projects': '<div id="projects">' +
-                '<div class="page-header">' +
-                  '<h1>Projects <small>side projects, open-source contributions, etc.</small></h1>' +
-                '</div>' +
                 '<div class="row">' +
                   '<div class="col-xs-9">' +
                     '<div class="row">' +
@@ -40,10 +34,6 @@ var htmlGrabber = {
                         '<div class="col-xs-3" id="menu-display">' +
                           '<h4>Notable Projects</h4>' +
                           '<div class="well active" onclick="projects.displayProject(event)">' +
-                            '<h5>Passavr</h5>' +
-                            '<p>All-in-one secure password management web application.</p>' +
-                          '</div>' +
-                          '<div class="well" onclick="projects.displayProject(event)">' +
                             '<h5>Passr Gem</h5>' +
                             '<p>All-in-one password generation, encryption and decryption Ruby gem.</p>' +
                           '</div>' +
@@ -59,26 +49,21 @@ var htmlGrabber = {
                       '</center>' +
                       '<div class="col-xs-9 well" id="project-contents">' +
                         projectGrabber['repoButton'] +
-                        projectGrabber['Passavr'] +
+                        projectGrabber['Passr Gem'] +
                       '</div>' +
                     '</div>' +
                   '</div>' +
                   '<div id="repos" class="col-xs-3 well">' +
+                    '<center><div class="loader"></div></center>' +
                   '</div>' +
                 '</div>' +
               '</div>',
-  'resume': '<div class="page-header">' +
-              '<h1>Resume <small>my professional experience</small></h1>' +
-            '</div>' +
-            '<div class="well">' +
+  'resume': '<div class="well">' +
               '<object data="images/workman_resume.pdf" type="application/pdf" width="100%" height="800px">' +
                 '<p>It appears you don\'t have a PDF plugin for this browser. You can <a href="images/workman_resume.pdf">click here to download the PDF file.</a></p>' +
               '</object>' +
             '</div>',
-  'contact': '<div class="page-header">' +
-               '<h1>Contact <small>let\'s get in touch</small></h1>' +
-              '</div>' +
-              '<div class="well"' +
+  'contact': '<div class="well"' +
                 '<p>I\'m always looking to collaborate and learn with other developers, project managers or enthusiasts.<br>' +
                 'Feel free to Tweet at me, email me or connect with me on LinkedIn by using the form below.</p>' +
                 '<div class="row" id="contact">' +
