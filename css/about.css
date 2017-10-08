@@ -1,5 +1,9 @@
-#about .col-xs-3, #about .col-xs-9.well  {
+#about .col-xs-9.well  {
   max-height: 445px;
+}
+
+#about .col-xs-3 {
+  height: 445px;
 }
 
 #about .col-xs-9.well {

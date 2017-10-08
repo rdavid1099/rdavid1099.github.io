@@ -23,9 +23,8 @@ var htmlGrabber = {
                  '</p>' +
                '</div>' +
               '<div class="col-xs-3 well">' +
-                '<h4>Recent Medium Posts</h4>' +
                 '<div id="medium">' +
-                  '<div class="loader"></div>' +
+                  '<center><div class="loader"></div></center>' +
                 '</div>' +
               '</div>' +
              '</div>' +
@@ -65,6 +64,7 @@ var htmlGrabber = {
                     '</div>' +
                   '</div>' +
                   '<div id="repos" class="col-xs-3 well">' +
+                    '<center><div class="loader"></div></center>' +
                   '</div>' +
                 '</div>' +
               '</div>',
