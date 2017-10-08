@@ -37,7 +37,7 @@ about.populateMedium = function() {
 
 var loadRecentPosts = function($medium) {
   try {
-    var innerHTML = '';
+    var innerHTML = '<h4>Recent Medium Posts</h4>';
     mediumPosts.slice(0,4).forEach(function(post) {
       innerHTML += '<a href="' + post.guid + '" target="_blank">' +
                    '<div class="panel panel-default">' +
@@ -54,7 +54,7 @@ var loadRecentPosts = function($medium) {
   } catch (err) {
     console.error(err);
     console.error('Loading backup data');
-    innerHTML = '';
+    innerHTML = '<h4>Recent Medium Posts</h4>';
     mediumPosts = stubbedPosts.items;
     mediumPosts.slice(0,4).forEach(function(post) {
       innerHTML += '<a href="' + post.guid + '" target="_blank">' +
