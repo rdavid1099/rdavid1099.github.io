@@ -40,10 +40,6 @@ var htmlGrabber = {
                         '<div class="col-xs-3" id="menu-display">' +
                           '<h4>Notable Projects</h4>' +
                           '<div class="well active" onclick="projects.displayProject(event)">' +
-                            '<h5>Passavr</h5>' +
-                            '<p>All-in-one secure password management web application.</p>' +
-                          '</div>' +
-                          '<div class="well" onclick="projects.displayProject(event)">' +
                             '<h5>Passr Gem</h5>' +
                             '<p>All-in-one password generation, encryption and decryption Ruby gem.</p>' +
                           '</div>' +
@@ -59,7 +55,7 @@ var htmlGrabber = {
                       '</center>' +
                       '<div class="col-xs-9 well" id="project-contents">' +
                         projectGrabber['repoButton'] +
-                        projectGrabber['Passavr'] +
+                        projectGrabber['Passr Gem'] +
                       '</div>' +
                     '</div>' +
                   '</div>' +
