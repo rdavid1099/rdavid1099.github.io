@@ -30,7 +30,9 @@ var projectGrabber = {
                     '</table>',
   'BuchaBuddy': '<h3>BuchaBuddy</h3>' +
                     '<p>' +
-                      '' +
+                      'BuchaBuddy gives you the power to track all of your supplies, ingredients, SCOBYs and batches in one place.<br>' +
+                      '<br>It is as an easy-to-use inventory management tool to help kombucha homebrewers of all experience levels and backgrounds enjoy the art of making their very own batches of kombucha.<br>' +
+                      '<br>The codebase uses Rails API/ PostgreSQL for the backend with Angular/ Typescript on the frontend and is served up using NGINX on a DigitalOcean droplet.<br>' +
                     '</p>' +
                     '<table class="table">' +
                       '<tr>' +
