@@ -1,7 +1,7 @@
-var aboutMe = '<br>I am a full-stack web developer who graduated from the <a href="https://www.turing.io/">Turing School of Software and Design</a> in January of 2017.<br>' +
+var aboutMe = '<br>I am a full-stack software engineer currently working at Sling Television developing new features on the legacy codebase, while updating existing features to from AngularJS to React.<br>' +
               '<br>Technology has been a passion of mine for as long as I can remember. I taught myself basic HTML and launched my first static web page when I was eight years old. ' +
               'Since then I have gained professional experience in several different work environments. I have learned from some of the best. Whether it\'s working directly with the CTO ' +
-              'of a small business in Denver or the expansive tech team at Dish Network, I always collaborate to my fullest to deliver the best product.<br>' +
+              'of a small business in Denver or the expansive tech team at SlingTV/ Dish Network, I always collaborate to my fullest to deliver the best product.<br>' +
               '<br>When I\'m not working on professional applications, I spend my time working on side-projects and contributing to open-source issues. I am always trying to learn more ' +
               'and have been diving into the server-side of applications. I have deployed a few of my Rails projects to DigitalOcean using Capistrano and am working on implementing ' +
               'CI/CD using Docker and Chef.<br>' +
@@ -34,22 +34,22 @@ var htmlGrabber = {
                         '<div class="col-xs-3" id="menu-display">' +
                           '<h4>Notable Projects</h4>' +
                           '<div class="well active" onclick="projects.displayProject(event)">' +
-                            '<h5>Passr Gem</h5>' +
-                            '<p>All-in-one password generation, encryption and decryption Ruby gem.</p>' +
+                            '<h5>BuchaBuddy</h5>' +
+                            '<p>Kombucha homebrewing inventory tracking application</p>' +
                           '</div>' +
                           '<div class="well" onclick="projects.displayProject(event)">' +
-                            '<h5>Acquire-A-Hire</h5>' +
-                            '<p>Turing project recreating the web application Thumbtack.</p>' +
+                            '<h5>Passr Gem</h5>' +
+                            '<p>All-in-one password generation, encryption and decryption Ruby gem</p>' +
                           '</div>' +
                           '<div class="well" onclick="projects.displayProject(event)">' +
                             '<h5>RyPass</h5>' +
-                            '<p>CLI password generator and storage tool.</p>' +
+                            '<p>CLI password generator and storage tool</p>' +
                           '</div>' +
                         '</div>' +
                       '</center>' +
                       '<div class="col-xs-9 well" id="project-contents">' +
                         projectGrabber['repoButton'] +
-                        projectGrabber['Passr Gem'] +
+                        projectGrabber['BuchaBuddy'] +
                       '</div>' +
                     '</div>' +
                   '</div>' +
