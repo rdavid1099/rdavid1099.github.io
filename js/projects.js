@@ -28,12 +28,11 @@ var projectGrabber = {
                         '<td><a href="https://coveralls.io/github/rdavid1099/passr?branch=master" target="_blank">Coveralls</a></td>' +
                       '</tr>' +
                     '</table>',
-  'Acquire-A-Hire': '<h3>Acquire-A-Hire</h3>' +
+  'BuchaBuddy': '<h3>BuchaBuddy</h3>' +
                     '<p>' +
-                      'Nearing the end of the Turing curriculum, we were placed in groups of four and tasked with "cloning" a popular website.<br><br>Our group created a clone of ' +
-                      '<a href="https://www.thumbtack.com/">Thumbtack</a>, the popular app connecting professionals with buyers. Along with the basic functionalities of connecting ' +
-                      'users of different roles with each other, including messaging, we also implemented our own versioned API and handrolled our own OAuth2.0.<br><br>I handled the ' +
-                      'DevOps on this project, deploying the application to DigitalOcean using Capistrano.' +
+                      'BuchaBuddy gives you the power to track all of your supplies, ingredients, SCOBYs and batches in one place.<br>' +
+                      '<br>It is as an easy-to-use inventory management tool to help kombucha homebrewers of all experience levels and backgrounds enjoy the art of making their very own batches of kombucha.<br>' +
+                      '<br>The codebase uses Rails API/ PostgreSQL for the backend with Angular/ Typescript on the frontend and is served up using NGINX on a DigitalOcean droplet.<br>' +
                     '</p>' +
                     '<table class="table">' +
                       '<tr>' +
@@ -42,14 +41,14 @@ var projectGrabber = {
                       '</tr>' +
                       '<tr>' +
                         '<td>Ruby/ Rails</td>' +
-                        '<td><a href="https://github.com/rdavid1099/acquire-a-hire" target="_blank">GitHub Repo</a></td>' +
+                        '<td><a href="http://buchabuddy.com" target="_blank">BuchaBuddy.com</a></td>' +
                       '</tr>' +
                       '<tr>' +
-                        '<td>JavaScript/ JQuery</td>' +
-                        '<td></td>' +
+                        '<td>Angular/ Typescript</td>' +
+                        '<td><a href="https://github.com/buchabuddy/buchabuddy" target="_blank">GitHub Repo</a></td>' +
                       '</tr>' +
                       '<tr>' +
-                        '<td>Capistrano/ DigitalOcean</td>' +
+                        '<td>Capistrano/ DigitalOcean, Redis, G-Suite, AWS</td>' +
                         '<td></td>' +
                       '</tr>' +
                     '</table>',
@@ -80,9 +79,8 @@ var projectGrabber = {
                         '<span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> Projects' +
                       '</button>' +
                       '<ul class="dropdown-menu">' +
-                        '<li class="dropdown-item" onclick="projects.displayProject(event, true)">Passavr</li>' +
+                        '<li class="dropdown-item" onclick="projects.displayProject(event, true)">BuchaBuddy</li>' +
                         '<li class="dropdown-item" onclick="projects.displayProject(event, true)">Passr Gem</li>' +
-                        '<li class="dropdown-item" onclick="projects.displayProject(event, true)">Acquire-A-Hire</li>' +
                         '<li class="dropdown-item" onclick="projects.displayProject(event, true)">RyPass</li>' +
                       '</ul>' +
                     '</div>'
@@ -119,7 +117,7 @@ projects.displayProject = function(e, dropdown) {
 };
 
 projects.populateRepos = function() {
-  // gitHubRepos = stubbedRepos // REMOVE FORCED STUBS BEFORE DEPLOY
+  gitHubRepos = stubbedRepos // REMOVE FORCED STUBS BEFORE DEPLOY
   var $repos = document.getElementById('repos');
   gitHubRepos ? loadRecentRepos($repos) : getRecentRepos($repos);
 };
