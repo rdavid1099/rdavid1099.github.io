@@ -34,22 +34,22 @@ var htmlGrabber = {
                         '<div class="col-xs-3" id="menu-display">' +
                           '<h4>Notable Projects</h4>' +
                           '<div class="well active" onclick="projects.displayProject(event)">' +
-                            '<h5>Passr Gem</h5>' +
-                            '<p>All-in-one password generation, encryption and decryption Ruby gem.</p>' +
+                            '<h5>BuchaBuddy</h5>' +
+                            '<p>Kombucha homebrewing inventory tracking application</p>' +
                           '</div>' +
                           '<div class="well" onclick="projects.displayProject(event)">' +
-                            '<h5>Acquire-A-Hire</h5>' +
-                            '<p>Turing project recreating the web application Thumbtack.</p>' +
+                            '<h5>Passr Gem</h5>' +
+                            '<p>All-in-one password generation, encryption and decryption Ruby gem</p>' +
                           '</div>' +
                           '<div class="well" onclick="projects.displayProject(event)">' +
                             '<h5>RyPass</h5>' +
-                            '<p>CLI password generator and storage tool.</p>' +
+                            '<p>CLI password generator and storage tool</p>' +
                           '</div>' +
                         '</div>' +
                       '</center>' +
                       '<div class="col-xs-9 well" id="project-contents">' +
                         projectGrabber['repoButton'] +
-                        projectGrabber['Passr Gem'] +
+                        projectGrabber['BuchaBuddy'] +
                       '</div>' +
                     '</div>' +
                   '</div>' +
