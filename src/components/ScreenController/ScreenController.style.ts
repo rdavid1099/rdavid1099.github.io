@@ -10,7 +10,10 @@ type ScreenControllerClassNames =
   | "n"
   | "rainbowLine"
   | "rdavid"
-  | "powerButtonContainer";
+  | "powerButtonContainer"
+  | "powerButton"
+  | "powerIcon"
+  | "powerLight";
 
 export const ScreenControllerStyles: Record<ScreenControllerClassNames, CSSProperties> = {
   root: {
@@ -28,6 +31,7 @@ export const ScreenControllerStyles: Record<ScreenControllerClassNames, CSSPrope
   name: {
     fontFamily: "'Zen Dots', cursive",
     fontSize: "36px",
+    textShadow: "1px 1px 0px #828282",
   },
   r: {
     color: "red",
@@ -53,5 +57,30 @@ export const ScreenControllerStyles: Record<ScreenControllerClassNames, CSSPrope
     paddingTop: "4px",
     fontFamily: "'Roboto Mono', monospace",
   },
-  powerButtonContainer: {},
+  powerButtonContainer: {
+    paddingRight: "16px",
+  },
+  powerButton: {
+    boxShadow: "inset rgb(115, 115, 115) 2px 2px 7px -1px",
+    borderRadius: "100%",
+    height: "72px",
+    width: "72px",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  powerIcon: {
+    width: "32px",
+    marginLeft: "auto",
+    marginRight: "auto",
+  },
+  powerLight: {
+    height: "8px",
+    backgroundColor: "#2a662a",
+    width: "8px",
+    borderRadius: "100%",
+    boxShadow: "0px 0px 10px green",
+    marginTop: "4px",
+  },
 };
