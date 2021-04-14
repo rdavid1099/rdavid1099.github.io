@@ -1,12 +1,12 @@
 import { CSSProperties } from "react";
 
-type RootPageClassNames = "rootContainer";
+type RootPageClassNames = "screenText";
 
 export const RootPageStyles: Record<RootPageClassNames, CSSProperties> = {
-  rootContainer: {
-    backgroundColor: "#2d2c2c",
-    borderRadius: "14px",
-    height: "720px",
-    width: "1080px",
+  screenText: {
+    color: "#3ef73e",
+    fontFamily: "'Roboto Mono', monospace",
+    fontWeight: "bold",
+    textShadow: "0px 0px 7px rgb(44, 185, 44)",
   },
 };

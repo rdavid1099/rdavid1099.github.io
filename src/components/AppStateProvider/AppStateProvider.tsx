@@ -1,8 +1,12 @@
 import React, { FC, createContext, useState, useCallback } from "react";
 
+export interface AppStateType {
+  welcomeText?: string;
+}
+
 export interface AppStateProviderContext {
-  state: Record<string, unknown>;
-  updateState(content: Record<string, unknown>): void;
+  state: AppStateType;
+  updateState(content: AppStateType): void;
 }
 
 export const AppStateContext = createContext<AppStateProviderContext>({
@@ -11,9 +15,9 @@ export const AppStateContext = createContext<AppStateProviderContext>({
 });
 
 export const StateProvider: FC = ({ children }) => {
-  const [state, setState] = useState<Record<string, unknown>>({});
+  const [state, setState] = useState<AppStateType>({});
 
-  const updateState = useCallback((content: Record<string, unknown>) => {
+  const updateState = useCallback((content: AppStateType) => {
     setState({ ...state, ...content });
     // eslint-disable-next-line
   }, []);

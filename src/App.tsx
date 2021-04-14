@@ -1,13 +1,23 @@
 import React, { FC } from "react";
+import { ScreenController } from "./components/ScreenController/ScreenController";
 import { StateProvider } from "./components/AppStateProvider/AppStateProvider";
 import { AppContainer } from "./components/AppContainer/AppContainer";
+import { ScreenContainer } from "./components/ScreenContainer/ScreenContainer";
 import { RootPage } from "./pages/RootPage/RootPage";
+import { Helmet } from "react-helmet";
 
 export const App: FC = () => {
   return (
     <AppContainer>
+      <Helmet>
+        <link rel="stylesheet" href="/App.css" />
+        <title>Hello World</title>
+      </Helmet>
       <StateProvider>
-        <RootPage />
+        <ScreenContainer>
+          <RootPage />
+        </ScreenContainer>
+        <ScreenController />
       </StateProvider>
     </AppContainer>
   );
