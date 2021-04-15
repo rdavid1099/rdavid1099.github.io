@@ -11,9 +11,28 @@ type ScreenControllerClassNames =
   | "rainbowLine"
   | "rdavid"
   | "powerButtonContainer"
-  | "powerButton"
+  | "powerButtonOn"
+  | "powerButtonOff"
   | "powerIcon"
-  | "powerLight";
+  | "powerLightOn"
+  | "powerLightOff";
+
+const basePowerLight: CSSProperties = {
+  height: "8px",
+  width: "8px",
+  borderRadius: "100%",
+  marginTop: "4px",
+};
+
+const basePowerButton: CSSProperties = {
+  borderRadius: "100%",
+  height: "72px",
+  width: "72px",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
+};
 
 export const ScreenControllerStyles: Record<ScreenControllerClassNames, CSSProperties> = {
   root: {
@@ -60,27 +79,26 @@ export const ScreenControllerStyles: Record<ScreenControllerClassNames, CSSPrope
   powerButtonContainer: {
     paddingRight: "16px",
   },
-  powerButton: {
+  powerButtonOn: {
+    ...basePowerButton,
     boxShadow: "inset rgb(115, 115, 115) 2px 2px 7px -1px",
-    borderRadius: "100%",
-    height: "72px",
-    width: "72px",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
+  },
+  powerButtonOff: {
+    ...basePowerButton,
+    boxShadow: "rgb(115, 115, 115) 2px 2px 7px -1px",
   },
   powerIcon: {
     width: "32px",
     marginLeft: "auto",
     marginRight: "auto",
   },
-  powerLight: {
-    height: "8px",
+  powerLightOn: {
+    ...basePowerLight,
     backgroundColor: "#2a662a",
-    width: "8px",
-    borderRadius: "100%",
     boxShadow: "0px 0px 10px green",
-    marginTop: "4px",
+  },
+  powerLightOff: {
+    ...basePowerLight,
+    backgroundColor: "#000000",
   },
 };

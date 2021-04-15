@@ -1,13 +1,21 @@
 import { CSSProperties } from "react";
 
-type ScreenContainerClassNames = "root" | "viewport";
+type ScreenContainerClassNames = "screenOn" | "screenOff" | "viewport";
+
+const baseScreen: CSSProperties = {
+  borderRadius: "14px",
+  height: "720px",
+  width: "1080px",
+};
 
 export const ScreenContainerStyles: Record<ScreenContainerClassNames, CSSProperties> = {
-  root: {
+  screenOn: {
+    ...baseScreen,
     backgroundColor: "#2d2c2c",
-    borderRadius: "14px",
-    height: "720px",
-    width: "1080px",
+  },
+  screenOff: {
+    ...baseScreen,
+    backgroundColor: "#171717",
   },
   viewport: {
     margin: "16px",

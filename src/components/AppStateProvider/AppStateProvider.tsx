@@ -1,7 +1,7 @@
 import React, { FC, createContext, useState, useCallback } from "react";
 
 export interface AppStateType {
-  welcomeText?: string;
+  screenOn: boolean;
 }
 
 export interface AppStateProviderContext {
@@ -9,13 +9,17 @@ export interface AppStateProviderContext {
   updateState(content: AppStateType): void;
 }
 
+const initialState: AppStateType = {
+  screenOn: true,
+};
+
 export const AppStateContext = createContext<AppStateProviderContext>({
-  state: {},
+  state: initialState,
   updateState: () => (): undefined => undefined,
 });
 
 export const StateProvider: FC = ({ children }) => {
-  const [state, setState] = useState<AppStateType>({});
+  const [state, setState] = useState<AppStateType>(initialState);
 
   const updateState = useCallback((content: AppStateType) => {
     setState({ ...state, ...content });
