@@ -1,17 +1,48 @@
-import React, { FC } from "react";
-import { RootPageStyles } from "./RootPage.style";
+import React, { FC, useState } from "react";
+import { TerminalText } from "../../components/TerminalText/TerminalText";
+
+type BlockNames = "hello" | "name" | "descrip";
 
 export const RootPage: FC = () => {
+  const [displayBlock, setDisplayBlock] = useState<Record<BlockNames, boolean>>({
+    hello: true,
+    name: false,
+    descrip: false,
+  });
+
+  const displayNextBlock = (blockName: BlockNames) => {
+    setTimeout(() => {
+      setDisplayBlock({ ...displayBlock, [blockName]: true });
+    }, 500);
+  };
+
   return (
     <div>
-      <p style={RootPageStyles.screenText}>{"> Hello world"}</p>
-      <p style={RootPageStyles.screenText}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum.
-      </p>
+      {displayBlock.hello && (
+        <TerminalText
+          autotype
+          onAutotypeComplete={() => {
+            displayNextBlock("name");
+          }}
+        >
+          Hello. Hi. :)
+        </TerminalText>
+      )}
+      {displayBlock.name && (
+        <TerminalText
+          autotype
+          onAutotypeComplete={() => {
+            displayNextBlock("descrip");
+          }}
+        >
+          My name is Ryan Workman. I am a full-stack software engineer and enjoy building fun things that make me smile.
+        </TerminalText>
+      )}
+      {displayBlock.descrip && (
+        <TerminalText autotype>
+          You can check out some of the things I've built and contributed to over at GitHub 🙂
+        </TerminalText>
+      )}
     </div>
   );
 };

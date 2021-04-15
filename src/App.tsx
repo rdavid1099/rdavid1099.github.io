@@ -10,7 +10,6 @@ export const App: FC = () => {
   return (
     <AppContainer>
       <Helmet>
-        <link rel="stylesheet" href="/App.css" />
         <title>Hello World</title>
       </Helmet>
       <StateProvider>
