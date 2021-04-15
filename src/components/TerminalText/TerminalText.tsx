@@ -1,4 +1,5 @@
 import React, { FC, useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { TerminalTextStyles } from "./TerminalText.style";
 
 interface TerminalTextProps {
@@ -38,13 +39,19 @@ export const TerminalText: FC<TerminalTextProps> = ({
         }, index * AutotypeSpeed[autotypeSpeed ?? "medium"]);
       });
     }
+    // eslint-disable-next-line
   }, [autotype, children, setDisplayText, autotypeSpeed]);
 
   return (
     <div style={TerminalTextStyles.rootContainer}>
+      <Helmet>
+        <link rel="stylesheet" href="/stylesheets/components/TerminalText.css" />
+      </Helmet>
       <p style={TerminalTextStyles.carrot}>{">"}</p>
-      <p>{displayText}</p>
-      {showCursor && <div style={{ height: "22px", width: "10px", backgroundColor: "green", marginLeft: "4px" }} />}
+      <p>
+        {displayText}
+        {showCursor && <div className="TerminalText__cursor" style={TerminalTextStyles.cursor} />}
+      </p>
     </div>
   );
 };
