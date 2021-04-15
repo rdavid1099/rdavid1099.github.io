@@ -1,6 +1,7 @@
 import React, { FC, MouseEvent } from "react";
 import { ScreenControllerStyles } from "./ScreenController.style";
-import { PowerIcon } from "../../icons";
+import { ScreenButton } from "./ScreenButton";
+import { PowerIcon, ProjectsIcon } from "../../icons";
 import { GITHUB_URL } from "../../constants/urls";
 import { useAppState } from "../../hooks/useAppState";
 
@@ -24,11 +25,8 @@ export const ScreenController: FC = () => {
     rainbowLine,
     rdavid,
     powerButtonContainer,
-    powerButtonOn,
-    powerButtonOff,
-    powerIcon,
-    powerLightOn,
-    powerLightOff,
+    menuButtonsContainer,
+    menuButton,
   } = ScreenControllerStyles;
 
   const handlePowerButtonClick = (event: MouseEvent) => {
@@ -50,13 +48,17 @@ export const ScreenController: FC = () => {
           </a>
         </div>
       </div>
+      <div style={menuButtonsContainer}>
+        <div style={menuButton}>
+          <ScreenButton onClick={handlePowerButtonClick} active={false}>
+            <ProjectsIcon />
+          </ScreenButton>
+        </div>
+      </div>
       <div style={powerButtonContainer}>
-        <a href="#" style={appState.screenOn ? powerButtonOn : powerButtonOff} onClick={handlePowerButtonClick}>
-          <div style={powerIcon}>
-            <PowerIcon />
-          </div>
-          <div style={appState.screenOn ? powerLightOn : powerLightOff} />
-        </a>
+        <ScreenButton onClick={handlePowerButtonClick} active={appState.screenOn}>
+          <PowerIcon />
+        </ScreenButton>
       </div>
     </div>
   );

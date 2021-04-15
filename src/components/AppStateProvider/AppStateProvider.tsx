@@ -1,16 +1,19 @@
 import React, { FC, createContext, useState, useCallback } from "react";
+import { ROOT_PAGE, PageType } from "../../constants/pages";
 
 export interface AppStateType {
   screenOn: boolean;
+  activePage: PageType;
 }
 
 export interface AppStateProviderContext {
   state: AppStateType;
-  updateState(content: AppStateType): void;
+  updateState(content: Partial<AppStateType>): void;
 }
 
 const initialState: AppStateType = {
   screenOn: true,
+  activePage: ROOT_PAGE,
 };
 
 export const AppStateContext = createContext<AppStateProviderContext>({
@@ -21,9 +24,9 @@ export const AppStateContext = createContext<AppStateProviderContext>({
 export const StateProvider: FC = ({ children }) => {
   const [state, setState] = useState<AppStateType>(initialState);
 
-  const updateState = useCallback((content: AppStateType) => {
+  const updateState = useCallback((content: Partial<AppStateType>) => {
     setState({ ...state, ...content });
-    // eslint-disable-next-line
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const actions: AppStateProviderContext = {

@@ -39,7 +39,7 @@ export const TerminalText: FC<TerminalTextProps> = ({
         }, index * AutotypeSpeed[autotypeSpeed ?? "medium"]);
       });
     }
-    // eslint-disable-next-line
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [autotype, children, setDisplayText, autotypeSpeed]);
 
   return (

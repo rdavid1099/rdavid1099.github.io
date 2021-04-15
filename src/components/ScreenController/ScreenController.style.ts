@@ -10,41 +10,20 @@ type ScreenControllerClassNames =
   | "n"
   | "rainbowLine"
   | "rdavid"
-  | "powerButtonContainer"
-  | "powerButtonOn"
-  | "powerButtonOff"
-  | "powerIcon"
-  | "powerLightOn"
-  | "powerLightOff";
-
-const basePowerLight: CSSProperties = {
-  height: "8px",
-  width: "8px",
-  borderRadius: "100%",
-  marginTop: "4px",
-};
-
-const basePowerButton: CSSProperties = {
-  borderRadius: "100%",
-  height: "72px",
-  width: "72px",
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  justifyContent: "center",
-};
+  | "menuButtonsContainer"
+  | "menuButton"
+  | "powerButtonContainer";
 
 export const ScreenControllerStyles: Record<ScreenControllerClassNames, CSSProperties> = {
   root: {
     height: "100px",
     width: "1300px",
     display: "flex",
-    justifyContent: "end",
+    justifyContent: "space-between",
     flexDirection: "row",
     alignItems: "center",
   },
   nameContainer: {
-    marginRight: "auto",
     padding: "16px",
   },
   name: {
@@ -78,27 +57,20 @@ export const ScreenControllerStyles: Record<ScreenControllerClassNames, CSSPrope
   },
   powerButtonContainer: {
     paddingRight: "16px",
+    height: "72px",
+    width: "72px",
   },
-  powerButtonOn: {
-    ...basePowerButton,
-    boxShadow: "inset rgb(115, 115, 115) 2px 2px 7px -1px",
+  menuButtonsContainer: {
+    borderRadius: "20px",
+    width: "170px",
+    height: "65px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    boxShadow: "rgb(115, 115, 115) 1px 1px 6px -2px inset",
   },
-  powerButtonOff: {
-    ...basePowerButton,
-    boxShadow: "rgb(115, 115, 115) 2px 2px 7px -1px",
-  },
-  powerIcon: {
-    width: "32px",
-    marginLeft: "auto",
-    marginRight: "auto",
-  },
-  powerLightOn: {
-    ...basePowerLight,
-    backgroundColor: "#2a662a",
-    boxShadow: "0px 0px 10px green",
-  },
-  powerLightOff: {
-    ...basePowerLight,
-    backgroundColor: "#000000",
+  menuButton: {
+    height: "50px",
+    width: "50px",
   },
 };
