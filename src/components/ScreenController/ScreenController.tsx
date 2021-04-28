@@ -4,6 +4,7 @@ import { ScreenButton } from "./ScreenButton";
 import { PowerIcon, ProjectsIcon } from "../../icons";
 import { GITHUB_URL } from "../../constants/urls";
 import { useAppState } from "../../hooks/useAppState";
+import { PageType, ROOT_PAGE, PROJECTS_PAGE } from "../../constants/pages";
 
 const RyanLogo: FC = () => {
   const { name, r, y, a, n } = ScreenControllerStyles;
@@ -37,6 +38,12 @@ export const ScreenController: FC = () => {
     updateState({ screenOn: !screenOn });
   };
 
+  const setActivePage = (pageName: PageType) => {
+    const activePage = appState.activePage === pageName ? ROOT_PAGE : pageName;
+
+    updateState({ activePage });
+  };
+
   return (
     <div style={root}>
       <div style={nameContainer}>
@@ -50,7 +57,7 @@ export const ScreenController: FC = () => {
       </div>
       <div style={menuButtonsContainer}>
         <div style={menuButton}>
-          <ScreenButton onClick={handlePowerButtonClick} active={false}>
+          <ScreenButton onClick={() => setActivePage(PROJECTS_PAGE)} active={appState.activePage === PROJECTS_PAGE}>
             <ProjectsIcon />
           </ScreenButton>
         </div>

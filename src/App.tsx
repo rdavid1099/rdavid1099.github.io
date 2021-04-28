@@ -3,8 +3,16 @@ import { ScreenController } from "./components/ScreenController/ScreenController
 import { StateProvider } from "./components/AppStateProvider/AppStateProvider";
 import { AppContainer } from "./components/AppContainer/AppContainer";
 import { ScreenContainer } from "./components/ScreenContainer/ScreenContainer";
-import { RootPage } from "./pages/RootPage/RootPage";
+import { Pages } from "./constants/pages";
+import { useAppState } from "./hooks/useAppState";
 import { Helmet } from "react-helmet";
+
+const ActivePage: FC = () => {
+  const { state: appState } = useAppState();
+  const Page = Pages[appState.activePage];
+
+  return <Page />;
+};
 
 export const App: FC = () => {
   return (
@@ -14,7 +22,7 @@ export const App: FC = () => {
       </Helmet>
       <StateProvider>
         <ScreenContainer>
-          <RootPage />
+          <ActivePage />
         </ScreenContainer>
         <ScreenController />
       </StateProvider>
