@@ -1,25 +1,10 @@
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 import { TerminalText } from "../../components/TerminalText/TerminalText";
-
-type BlockNames = "hello" | "name" | "descrip";
+import { useDisplayBlock } from "../../hooks/useDisplayBlock";
 
 export const RootPage: FC = () => {
-  const [displayBlock, setDisplayBlock] = useState<Record<BlockNames, Record<"display" | "showCursor", boolean>>>({
-    hello: { display: true, showCursor: true },
-    name: { display: false, showCursor: true },
-    descrip: { display: false, showCursor: true },
-  });
+  const { displayBlock, displayNextBlock } = useDisplayBlock(["hello", "name", "descrip"]);
 
-  const displayNextBlock = (currentBlockName: BlockNames, nextBlockName: BlockNames) => {
-    setTimeout((): void => {
-      setDisplayBlock({
-        ...displayBlock,
-        [currentBlockName]: { display: true, showCursor: false },
-        [nextBlockName]: { display: true, showCursor: true },
-      });
-    }, 1200);
-  };
-  console.log(displayBlock);
   return (
     <div>
       {displayBlock.hello.display && (
@@ -27,7 +12,7 @@ export const RootPage: FC = () => {
           autotype
           showCursor={displayBlock.hello.showCursor}
           onAutotypeComplete={() => {
-            displayNextBlock("hello", "name");
+            displayNextBlock("hello", "name", 1500);
           }}
         >
           Hello. Hi. :)
@@ -38,7 +23,7 @@ export const RootPage: FC = () => {
           autotype
           showCursor={displayBlock.name.showCursor}
           onAutotypeComplete={() => {
-            displayNextBlock("name", "descrip");
+            displayNextBlock("name", "descrip", 1000);
           }}
         >
           My name is Ryan Workman. I am a software engineer based out of Denver, Colorado and enjoy building fun things
