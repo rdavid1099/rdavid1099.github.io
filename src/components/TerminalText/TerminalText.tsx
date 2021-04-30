@@ -23,6 +23,7 @@ export const TerminalText: FC<TerminalTextProps> = ({
   showCursor,
   onAutotypeComplete,
 }) => {
+  console.log("redrawing");
   const [displayText, setDisplayText] = useState<string>(autotype ? "" : children);
 
   useEffect(() => {
@@ -41,7 +42,8 @@ export const TerminalText: FC<TerminalTextProps> = ({
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [autotype, children, setDisplayText, autotypeSpeed]);
-
+  console.log(displayText);
+  console.log(children);
   return (
     <div style={TerminalTextStyles.rootContainer}>
       <Helmet>
@@ -49,7 +51,7 @@ export const TerminalText: FC<TerminalTextProps> = ({
       </Helmet>
       <p style={TerminalTextStyles.carrot}>{">"}</p>
       <p>
-        {displayText}
+        {children}
         {showCursor && <div className="TerminalText__cursor" style={TerminalTextStyles.cursor} />}
       </p>
     </div>

@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { TerminalText } from "../../components/TerminalText/TerminalText";
+import { TerminalInputRepl } from "../../components/TerminalInputRepl/TerminalInputRepl";
 import { useDisplayBlock } from "../../hooks/useDisplayBlock";
 
 export const RootPage: FC = () => {
@@ -9,8 +10,8 @@ export const RootPage: FC = () => {
     <div>
       {displayBlock.hello.display && (
         <TerminalText
-          autotype
-          showCursor={displayBlock.hello.showCursor}
+          autotype={false}
+          showCursor={displayBlock.hello.showCursor && false}
           onAutotypeComplete={() => {
             displayNextBlock("hello", "name", 1500);
           }}
@@ -35,6 +36,7 @@ export const RootPage: FC = () => {
           Feel free to click around and check out what I've been up to and some of my past projects.
         </TerminalText>
       )}
+      <TerminalInputRepl />
     </div>
   );
 };
